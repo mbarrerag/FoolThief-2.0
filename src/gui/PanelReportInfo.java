@@ -13,7 +13,7 @@ public class PanelReportInfo extends javax.swing.JPanel {
     /**
      * Creates new form PanelReportInfo
      */
-    public PanelReportInfo() {
+    public PanelReportInfo(String[] data) {
         initComponents();
     }
 

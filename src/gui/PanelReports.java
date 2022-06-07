@@ -390,7 +390,10 @@ public class PanelReports extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String id = JOptionPane.showInputDialog(null, "Inserte el ID del reporte: ", "Reportes", JOptionPane.QUESTION_MESSAGE);
-        System.out.println(id);
+        String[] data = Controller.queryReportById(id);
+        for (String e: data) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_btnSearchActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed

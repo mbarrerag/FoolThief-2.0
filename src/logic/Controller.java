@@ -68,11 +68,13 @@ public class Controller {
     
     public static String[] queryReportById(String id) {
         try {
-            int length = caseList.size();
             int idInt = Integer.parseInt(id);
             String[] data = new String[9];
-            // Consultese en árbol y retorne todos los datos en Stolen
-
+            if (reportTree.exist(idInt)) {
+                Stolen stolen = reportTree.get(idInt);
+                data = stolen.getAllData();
+            }
+            
             return data;
         } catch (NegativeArraySizeException e) {
             String[] data = new String[9];
