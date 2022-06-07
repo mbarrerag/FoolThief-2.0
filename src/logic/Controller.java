@@ -64,8 +64,6 @@ public class Controller {
         String[] attemptData = {Integer.toString(id), data[1], data[2], data[3], data[4], data[5]};
         report.setAllData(attemptData);
         caseList.add(report);
-        
-        
     }
     
     public static String[] queryReportById(String id) {
@@ -74,8 +72,7 @@ public class Controller {
             int idInt = Integer.parseInt(id);
             String[] data = new String[9];
             // Consultese en árbol y retorne todos los datos en Stolen
-            
-            
+
             return data;
         } catch (NegativeArraySizeException e) {
             String[] data = new String[9];
@@ -126,9 +123,16 @@ public class Controller {
     public static void deleteReport(String id) {
         int idInt = Integer.parseInt(id);
         int index = browseReport(idInt);
+        
+        // Eliminando en lista
         Attempt report = caseList.get(index);
         if (report.getId() == idInt) {
             caseList.remove(index);
+        }
+        
+        // Eliminando en árbol AVL
+        if (reportTree.exist(idInt)) {
+            reportTree.delete(idInt);
         }
     }
 }

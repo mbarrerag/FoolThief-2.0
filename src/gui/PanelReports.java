@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package gui;
 
 import java.util.Calendar;
@@ -11,10 +7,7 @@ import javax.swing.ImageIcon;
 
 import logic.Controller;
 
-/**
- *
- * @author Usuario
- */
+
 public class PanelReports extends javax.swing.JPanel {
     private final ImageIcon ERRORIMG = new ImageIcon(getClass().getResource("/images/img_error.png"));
     private final ImageIcon DANGERIMG = new ImageIcon(getClass().getResource("/images/img_danger.png"));
@@ -295,8 +288,15 @@ public class PanelReports extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+    private void cleanTable() {
+        for (int i=0; i<tableData.getRowCount(); i++) {
+            modelTable.removeRow(i);
+            i -= 1;
+        }
+    }
     
     private void fillTable() {
+        cleanTable();
         String[][] data = Controller.queryDataTable();
         modelTable.setRowCount(0);
         for (String[] row : data) {

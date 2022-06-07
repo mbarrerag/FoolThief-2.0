@@ -2,8 +2,8 @@ package logic;
 
 
 public class LinkedList<T> {
-    private Node<T> head;
-    private Node<T> tail;
+    private NodeLinkedList<T> head;
+    private NodeLinkedList<T> tail;
     private int length;
 
     LinkedList() {
@@ -26,7 +26,7 @@ public class LinkedList<T> {
     }
 
     public void addFirst(T data) {
-        Node<T> node = new Node<T>(data);
+        NodeLinkedList<T> node = new NodeLinkedList<T>(data);
         if (head == null) {
             head = node;
             tail = head;
@@ -38,7 +38,7 @@ public class LinkedList<T> {
     }
 
     public void add(T data) {
-        Node<T> node = new Node<T>(data);
+        NodeLinkedList<T> node = new NodeLinkedList<T>(data);
         if (head == null) {
             head = node;
             tail = head;
@@ -56,12 +56,12 @@ public class LinkedList<T> {
         } else if (index == 0) {
             addFirst(data);
         } else if (index > 0 && index <= (length - 1)) {
-            Node<T> node = new Node<T>(data);
+            NodeLinkedList<T> node = new NodeLinkedList<T>(data);
             if (head == null) {
                 head = node;
                 tail = head;
             } else {
-                Node<T> pointer = head;
+                NodeLinkedList<T> pointer = head;
                 int counter = 0;
                 while ((counter < (index - 1)) && (pointer.getNext() != null)) {
                     pointer = pointer.getNext();
@@ -88,7 +88,7 @@ public class LinkedList<T> {
         if (index == length) {
             getLast();
         } else if (index >= 0 && index <= (length - 1)) {
-            Node<T> pointer = head;
+            NodeLinkedList<T> pointer = head;
             int counter = 0;
             while ((counter < index) && (pointer.getNext() != null)) {
                 pointer = pointer.getNext();
@@ -126,13 +126,13 @@ public class LinkedList<T> {
             } else if (index == length - 1) {
                 removeLast();
             } else if ((index > 0) && (index < length)) {
-                Node<T> pointer = head;
+                NodeLinkedList<T> pointer = head;
                 int counter = 0;
                 while ((counter < index - 1) && (pointer.getNext() != null)) {
                     pointer = pointer.getNext();
                     counter++;
                 }
-                Node<T> temp = pointer.getNext();
+                NodeLinkedList<T> temp = pointer.getNext();
                 pointer.setNext(temp.getNext());
                 temp.getNext().setPrev(pointer);
                 temp.setNext(null);
@@ -143,11 +143,23 @@ public class LinkedList<T> {
 
     public void removeLast() {
         if (head != null) {
-            Node<T> last = tail;
+            NodeLinkedList<T> last = tail;
             tail = tail.getPrev();
             tail.setNext(null);
             last.setPrev(null);
             length--;
+        }
+    }
+    
+    public void displayElements() {
+        if (head == null) {
+            System.out.println("No elements");
+        } else {
+            NodeLinkedList<T> pointer = head;
+            while (pointer != null) {
+                System.out.println(pointer.getData());
+                pointer = pointer.getNext();
+            }
         }
     }
 }
