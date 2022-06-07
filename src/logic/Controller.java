@@ -3,7 +3,10 @@ package logic;
 
 public class Controller {
     // Data structures of project
+    public static AvlTree reportTree = new AvlTree();
+    public static BinaryTree topTree = new BinaryTree();
     public static LinkedList<Attempt> caseList = new LinkedList<>();
+    
     public static int id = 0;
     
     public static void generateId(int lastId) {
@@ -46,14 +49,23 @@ public class Controller {
         id++;
         // CODIGO DE GENERACIÓN DE ID AQUÍ
         
-        // Añadiendo en lista
+        // Añadiendo al arbol AVL
+        Stolen stolen = new Stolen();
+        String[] stolenData = new String[9];
+        stolenData[0] = Integer.toString(id);
+        for (int i=1; i<9; i++) {
+            stolenData[i] = data[i - 1];
+        }
+        stolen.setAllData(stolenData);
+        reportTree.insert(stolen);
+        
+        // Añadiendo a la lista
         Attempt report = new Attempt();
         String[] attemptData = {Integer.toString(id), data[1], data[2], data[3], data[4], data[5]};
         report.setAllData(attemptData);
         caseList.add(report);
         
-        // Añadiendo en árbol
-        // ...
+        
     }
     
     public static String[] queryReportById(String id) {
@@ -89,13 +101,26 @@ public class Controller {
     public static void updateReport(String id, String[] data) {
         int idInt = Integer.parseInt(id);
         int index = browseReport(idInt);
-        Attempt report = caseList.get(index);
-        if (report.getId() == idInt) {
-            String[] attemptData = {id, data[1], data[2], data[3], data[4], data[5]};
-            report.setAllData(attemptData);
+        
+        // Modificando en el árbol AVL
+        Stolen stolen = reportTree.get(idInt);
+        if (stolen == null) {
+            throw new RuntimeException("ERROR: El ID no existe");
+        } else {
+            String[] stolenData = new String[9];
+            stolenData[0] = id;
+            for (int i=1; i<9; i++) {
+                stolenData[i] = data[i - 1];
+            }
+            stolen.setAllData(stolenData);
         }
         
-        // Agregar código para árbol
+        // Modificando en lista
+        Attempt attempt = caseList.get(index);
+        if (attempt.getId() == idInt) {
+            String[] attemptData = {id, data[1], data[2], data[3], data[4], data[5]};
+            attempt.setAllData(attemptData);
+        }
     }
     
     public static void deleteReport(String id) {
