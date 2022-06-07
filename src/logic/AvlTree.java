@@ -4,6 +4,7 @@
  */
 package logic;
 
+
 public class AvlTree implements ImplementationTree<Stolen> {
 
     private NodeTree root;
@@ -46,6 +47,11 @@ public class AvlTree implements ImplementationTree<Stolen> {
         root = insert(root, obj);
     }
 
+    @Override
+    public void delete(int id) {
+        root = delete(root, id);
+    }
+
     private NodeTree insert(NodeTree node, Stolen obj) {
         if (node == null) {
             return new NodeTree(obj);
@@ -57,10 +63,6 @@ public class AvlTree implements ImplementationTree<Stolen> {
             throw new RuntimeException("ERROR: Duplicated insertion");
         }
         return rebalance(node);
-    }
-    @Override
-    public void delete(int id) {
-        root = delete(root, id);
     }
 
     private NodeTree delete(NodeTree node, int id) {
@@ -223,11 +225,8 @@ public class AvlTree implements ImplementationTree<Stolen> {
         System.out.println("");
     }
 
-    
     @Override
     public boolean isLeaf() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-
- 
 }

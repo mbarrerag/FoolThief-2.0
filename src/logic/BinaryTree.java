@@ -4,10 +4,7 @@
  */
 package logic;
 
-/**
- *
- * @author Stepe
- */
+
 public class BinaryTree implements ImplementationTree<Tops> {
 
     NodeTree root;
