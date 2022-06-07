@@ -66,6 +66,26 @@ public class Controller {
         caseList.add(report);
     }
     
+    public static String[][] queryDataTable() {
+        try {
+            int length = caseList.size();
+            String[][] data = new String[length][6];
+            for (int i=0; i<data.length; i++) {
+                Attempt infoNode = caseList.get(i);
+                data[i] = infoNode.getAllData();
+            }
+            return data;
+        } catch (NegativeArraySizeException e) {
+            String[][] data = new String[0][0];
+            return data;
+        }
+    }
+    
+    public static boolean existReport(String id) {
+        int idInt = Integer.parseInt(id);
+        return reportTree.exist(idInt);
+    }
+    
     public static String[] queryReportById(String id) {
         try {
             int idInt = Integer.parseInt(id);
@@ -78,21 +98,6 @@ public class Controller {
             return data;
         } catch (NegativeArraySizeException e) {
             String[] data = new String[9];
-            return data;
-        }
-    }
-
-    public static String[][] queryDataTable() {
-        try {
-            int length = caseList.size();
-            String[][] data = new String[length][6];
-            for (int i=0; i<data.length; i++) {
-                Attempt infoNode = caseList.get(i);
-                data[i] = infoNode.getAllData();
-            }
-            return data;
-        } catch (NegativeArraySizeException e) {
-            String[][] data = new String[0][0];
             return data;
         }
     }

@@ -9,6 +9,7 @@ import logic.Controller;
 
 
 public class PanelReports extends javax.swing.JPanel {
+    
     private final ImageIcon ERRORIMG = new ImageIcon(getClass().getResource("/images/img_error.png"));
     private final ImageIcon DANGERIMG = new ImageIcon(getClass().getResource("/images/img_danger.png"));
     DefaultTableModel modelTable;
@@ -20,6 +21,7 @@ public class PanelReports extends javax.swing.JPanel {
         modelTable = (DefaultTableModel) tableData.getModel();
         
         fillCombobox();
+        cleanForm();
         fillTable();
     }
     
@@ -390,9 +392,16 @@ public class PanelReports extends javax.swing.JPanel {
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String id = JOptionPane.showInputDialog(null, "Inserte el ID del reporte: ", "Reportes", JOptionPane.QUESTION_MESSAGE);
-        String[] data = Controller.queryReportById(id);
-        for (String e: data) {
-            System.out.println(e);
+        try {
+            if (Controller.existReport(id) == false) {
+            JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
+            return;
+            }
+            String[] data = Controller.queryReportById(id);
+            ReportWindow reportWindow = new ReportWindow(data);
+            reportWindow.toFront();
+        } catch (NumberFormatException e) {
+            
         }
     }//GEN-LAST:event_btnSearchActionPerformed
 
@@ -418,7 +427,18 @@ public class PanelReports extends javax.swing.JPanel {
 
     private void btnViewMoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMoreActionPerformed
         int selectedRow = tableData.getSelectedRow();
-        // Consultar datos con ID del registro seleccionado
+        String id = tableData.getValueAt(selectedRow, 0).toString();
+        try {
+            if (Controller.existReport(id) == false) {
+            JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
+            return;
+            }
+            String[] data = Controller.queryReportById(id);
+            ReportWindow reportWindow = new ReportWindow(data);
+            reportWindow.setLocationRelativeTo(null);
+        } catch (NumberFormatException e) {
+            
+        }
     }//GEN-LAST:event_btnViewMoreActionPerformed
 
     private void tableDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataMouseClicked
