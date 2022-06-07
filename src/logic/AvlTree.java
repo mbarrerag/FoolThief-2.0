@@ -41,6 +41,7 @@ public class AvlTree implements ImplementationTree<Stolen> {
         return null;
     }
 
+    @Override
     public void insert(Stolen obj) {
         root = insert(root, obj);
     }
@@ -57,6 +58,7 @@ public class AvlTree implements ImplementationTree<Stolen> {
         }
         return rebalance(node);
     }
+    @Override
     public void delete(int id) {
         root = delete(root, id);
     }
@@ -168,14 +170,17 @@ public class AvlTree implements ImplementationTree<Stolen> {
         }
     }
 
+    @Override
     public void preorder() {
         preorderHelper(root);
     }
 
+    @Override
     public void inorder() {
         inorderHelper(root);
     }
 
+    @Override
     public void postorder() {
         postorderHelper(root);
     }
@@ -218,11 +223,7 @@ public class AvlTree implements ImplementationTree<Stolen> {
         System.out.println("");
     }
 
-    @Override
-    public void deleted(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     @Override
     public boolean isLeaf() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody

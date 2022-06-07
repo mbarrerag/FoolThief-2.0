@@ -6,13 +6,13 @@ package logic;
 
 public interface ImplementationTree<T extends Comparable>  {
   
-    void insert(T top);
+    void insert(T obj);
     
     boolean exist(int id);
     
     T get(int id);
     
-    void deleted(int id);
+    void delete(int id);
     
     boolean isLeaf();
     

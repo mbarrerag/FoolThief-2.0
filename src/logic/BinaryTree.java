@@ -108,7 +108,7 @@ public class BinaryTree implements ImplementationTree<Tops> {
         }
 
     @Override
-    public void deleted(int id) {
+    public void delete(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
