@@ -66,14 +66,14 @@ public class BinaryTree implements ImplementationTree<Tops> {
     }
 
     @Override
-    public Tops obtein(int id) {
+    public Tops get(int id) {
         if (value != null) {
             if (id == value.getNumber()) {
                 return value;
             } else if (id < value.getNumber() && left != null) {
-                return left.obtein(id);
+                return left.get(id);
             } else if (id > value.getNumber() && left != null) {
-                return right.obtein(id);
+                return right.get(id);
             } else {
                 return null;
             }
@@ -83,25 +83,25 @@ public class BinaryTree implements ImplementationTree<Tops> {
     }
     
     @Override
-    public void preorden() {
+    public void preorder() {
         if (value != null) {
             System.out.println(value.getNumber());
             if (left != null) {
-                left.preorden();
+                left.preorder();
             }
             if (right != null) {
-                right.preorden();
+                right.preorder();
             }
         }
     }
-    public void inorden(){
+    public void inorder(){
         if( value != null){
             if(left != null){
-                left.inorden();
+                left.inorder();
             }
             System.out.println(value.getNumber());
             if( right != null){
-                right.inorden();
+                right.inorder();
     
                 }
             }
@@ -113,7 +113,7 @@ public class BinaryTree implements ImplementationTree<Tops> {
     }
 
     @Override
-    public void postorden() {
+    public void postorder() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }

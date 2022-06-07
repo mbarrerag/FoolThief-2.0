@@ -10,7 +10,7 @@ public interface ImplementationTree<T extends Comparable>  {
     
     boolean exist(int id);
     
-    T obtein(int id);
+    T get(int id);
     
     void deleted(int id);
     
@@ -18,9 +18,9 @@ public interface ImplementationTree<T extends Comparable>  {
     
     boolean isEmpty();
     
-    void preorden();
+    void preorder();
     
-    void inorden();
+    void inorder();
     
-    void postorden();
+    void postorder();
 }    

@@ -33,7 +33,7 @@ public class AvlTree implements ImplementationTree<Stolen> {
     }
 
     @Override
-    public Stolen obtein(int id) {
+    public Stolen get(int id) {
         NodeTree node = searchNode(root, id);
         if (node != null) {
             return node.getData();
@@ -56,6 +56,9 @@ public class AvlTree implements ImplementationTree<Stolen> {
             throw new RuntimeException("ERROR: Duplicated insertion");
         }
         return rebalance(node);
+    }
+    public void delete(int id) {
+        root = delete(root, id);
     }
 
     private NodeTree delete(NodeTree node, int id) {
@@ -225,18 +228,5 @@ public class AvlTree implements ImplementationTree<Stolen> {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public void preorden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void inorden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void postorden() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+ 
 }
