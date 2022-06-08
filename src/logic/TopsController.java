@@ -1,7 +1,5 @@
 package logic;
 
-import java.util.Arrays;
-
 
 public class TopsController {
     
@@ -49,8 +47,6 @@ public class TopsController {
                 break;
             }
         }
-        
-        displayData();
     }
     
     public static void deleteReportCount(String neighborhood, String object, String modus) {
@@ -77,8 +73,6 @@ public class TopsController {
                 break;
             }
         }
-        
-        displayData();
     }
     
     public static String[] topNeighborhoods() {
@@ -127,8 +121,6 @@ public class TopsController {
         String[] data = dataString.split(",");
         return data;
     }
-    
-    
     
     public static void displayData() {
         int n = countNeighborhoods.length;

@@ -2,7 +2,8 @@ package logic;
 
 
 public class Stolen implements Comparable<Stolen> {
-      private int id;
+    
+    private int id;
     private String name;
     private String date;
     private String hour;
