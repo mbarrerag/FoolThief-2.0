@@ -1,5 +1,7 @@
 package logic;
 
+import java.util.Arrays;
+
 
 public class TopsController {
     
@@ -47,52 +49,83 @@ public class TopsController {
                 break;
             }
         }
+        
+        displayData();
     }
     
-    public static void topNeighborhoods() {
+    public static void deleteReportCount(String neighborhood, String object, String modus) {
+        int n = countNeighborhoods.length;
+        for (int i=0; i<n; i++) {
+            if (neighborhood == neighborhoods[i]) {
+                countNeighborhoods[i]--;
+                break;
+            }
+        }
+        
+        int m = countObjects.length;
+        for (int i=0; i<m; i++) {
+            if (object == objects[i]) {
+                countObjects[i]--;
+                break;
+            }
+        }
+        
+        int l = countModusOperandi.length;
+        for (int i=0; i<l; i++) {
+            if (modus == modusOperandi[i]) {
+                countModusOperandi[i]--;
+                break;
+            }
+        }
+        
+        displayData();
+    }
+    
+    public static String[] topNeighborhoods() {
         if (treeTop.itsEmpty() == false) {
             treeTop.makeEmpty();
         }
         
         int n = countNeighborhoods.length;
         for (int i=0; i<n; i++) {
-            if (countNeighborhoods[i] != 0) {
-                Tops top = new Tops(neighborhoods[i], countNeighborhoods[i]);
-                treeTop.insert(top);
-            }
+            Tops top = new Tops(neighborhoods[i], countNeighborhoods[i]);
+            treeTop.insert(top);
         }
         
-        treeTop.inorder();
+        String dataString = treeTop.inorderData();
+        String[] data = dataString.split(",");
+        return data;
     }
     
-    public static void topObjects() {
+    public static String[] topObjects() {
         if (treeTop.itsEmpty() == false) {
             treeTop.makeEmpty();
         }
         
         int n = countObjects.length;
         for (int i=0; i<n; i++) {
-                Tops top = new Tops(objects[i], countObjects[i]);
-                treeTop.insert(top);
+            Tops top = new Tops(objects[i], countObjects[i]);
+            treeTop.insert(top);
         }
         
-        treeTop.inorder();
+        String dataString = treeTop.inorderData();
+        String[] data = dataString.split(",");
+        return data;
     }
     
-    public static void topModusOperandi() {
+    public static String[] topModusOperandi() {
         if (treeTop.itsEmpty() == false) {
             treeTop.makeEmpty();
         }
         
         int n = countModusOperandi.length;
         for (int i=0; i<n; i++) {
-            if (countModusOperandi[i] != 0) {
-                Tops top = new Tops(modusOperandi[i], countModusOperandi[i]);
-                treeTop.insert(top);
-            }
+            Tops top = new Tops(modusOperandi[i], countModusOperandi[i]);
+            treeTop.insert(top);
         }
-        treeTop.inorder();
-        
+        String dataString = treeTop.inorderData();
+        String[] data = dataString.split(",");
+        return data;
     }
     
     

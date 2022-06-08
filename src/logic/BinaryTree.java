@@ -64,13 +64,14 @@ public class BinaryTree implements ImplementationTree<Tops> {
                     left = new BinaryTree();
                 }
                 left.insert(top);
-            } else if (top.compareTo(top) > 0) {
+            } else if (top.compareTo(top) >= 0) {
                 if (right == null) {
                     right = new BinaryTree();
                 }
                 right.insert(top);
             } else {
                 //throw new RuntimeException("Insertando un dato duplicado");
+                System.out.println("No se inserto " + top.getData() + ", dato duplicado");
             }
         }
     }
@@ -123,11 +124,11 @@ public class BinaryTree implements ImplementationTree<Tops> {
         String data = "";
         if (value != null) {
             if (left != null) {
-                left.postorder();
+                data += left.inorderData();
             }
             data += value.getData() + ",";
             if (right != null) {
-                right.postorder();
+                data += right.inorderData();
             }
         }
         return data;

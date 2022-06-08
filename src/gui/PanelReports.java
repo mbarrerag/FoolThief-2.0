@@ -329,7 +329,8 @@ public class PanelReports extends javax.swing.JPanel {
     
     private boolean checkEmptyFields() {
         return txtName.getText().isEmpty() || txtHour.getText().isEmpty() 
-                || txtDescription.getText().isEmpty() || txtPlace.getText().isEmpty();
+                || txtDescription.getText().isEmpty() || txtPlace.getText().isEmpty()
+                || dtchDate.getDate() == null;
     }
     
     private void cleanForm() {
@@ -361,8 +362,13 @@ public class PanelReports extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Por favor seleccione un reporte.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
         } else {
             String id = tableData.getValueAt(selectedRow, 0).toString();
+            String neighborhood = tableData.getValueAt(selectedRow, 3).toString();
+            String object = tableData.getValueAt(selectedRow, 4).toString();
+            String modusOperandi = tableData.getValueAt(selectedRow, 5).toString();
             if (ReportController.isOnTheList(id)) {
                 ReportController.updateReport(id, data);
+                TopsController.deleteReportCount(neighborhood, object, modusOperandi);
+                TopsController.addReportCount(data[3], data[4], data[5]);
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el reporte a modificar.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
             }
@@ -420,6 +426,10 @@ public class PanelReports extends javax.swing.JPanel {
         
         if (dialog == JOptionPane.YES_OPTION) {
             if (ReportController.isOnTheList(id)) {
+                String neighborhood = tableData.getValueAt(selectedRow, 3).toString();
+                String object = tableData.getValueAt(selectedRow, 4).toString();
+                String modusOperandi = tableData.getValueAt(selectedRow, 5).toString();
+                TopsController.deleteReportCount(neighborhood, object, modusOperandi);
                 ReportController.deleteReport(id);
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el reporte a eliminar.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
