@@ -203,32 +203,27 @@ public class PanelHome extends javax.swing.JPanel {
     }
     
     private void btnModusOperandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModusOperandiActionPerformed
-        String[] data = TopsController.topModusOperandi();
+        //String[] data = TopsController.topModusOperandi();
 
-        Collections.reverse(Arrays.asList(data));
-        for (String e: data) {
-            System.out.println(e);
-        }
     }//GEN-LAST:event_btnModusOperandiActionPerformed
 
     private void btnNeighborhoodsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeighborhoodsActionPerformed
-        String[] data = TopsController.topNeighborhoods();
+        // String[] data = TopsController.topNeighborhoods();
+        TopsController.topNeighborhoods();
 
-        Collections.reverse(Arrays.asList(data));
+        //Collections.reverse(Arrays.asList(data));
+        
+        /*
         String[] array = new String[5];
         for (int i=0; i<=data.length-1; i++) {
             array[i] = data[i];
         }
         System.out.println(Arrays.toString(data));
-        fillTop(array);
+        fillTop(array);*/
     }//GEN-LAST:event_btnNeighborhoodsActionPerformed
 
     private void btnObjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObjectsActionPerformed
-        String[] data = TopsController.topObjects();
-
-        for (String e: data) {
-            System.out.println(e);
-        }
+        
     }//GEN-LAST:event_btnObjectsActionPerformed
 
 

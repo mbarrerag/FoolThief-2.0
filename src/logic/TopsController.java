@@ -84,7 +84,7 @@ public class TopsController {
         return data;
     }
     
-    public static String[] topModusOperandi() {
+    public static void topModusOperandi() {
         if (treeTop.itsEmpty() == false) {
             treeTop.makeEmpty();
         }
@@ -97,9 +97,7 @@ public class TopsController {
             }
         }
         
-        String stringData = treeTop.inorderData();
-        String[] data = stringData.split(",");
-        return data;
+        
     }
     
     
