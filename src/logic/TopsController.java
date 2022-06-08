@@ -49,7 +49,7 @@ public class TopsController {
         }
     }
     
-    public static String[] topNeighborhoods() {
+    public static void topNeighborhoods() {
         if (treeTop.itsEmpty() == false) {
             treeTop.makeEmpty();
         }
@@ -62,13 +62,10 @@ public class TopsController {
             }
         }
         
-        String stringData = treeTop.inorderData();
-        System.out.println(stringData);
-        String[] data = stringData.split(",");
-        return data;
+        treeTop.inorder();
     }
     
-    public static String[] topObjects() {
+    public static void topObjects() {
         if (treeTop.itsEmpty() == false) {
             treeTop.makeEmpty();
         }
@@ -79,9 +76,7 @@ public class TopsController {
                 treeTop.insert(top);
         }
         
-        String stringData = treeTop.inorderData();
-        String[] data = stringData.split(",");
-        return data;
+        treeTop.inorder();
     }
     
     public static void topModusOperandi() {
@@ -96,7 +91,7 @@ public class TopsController {
                 treeTop.insert(top);
             }
         }
-        
+        treeTop.inorder();
         
     }
     
