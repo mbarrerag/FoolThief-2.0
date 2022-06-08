@@ -1,5 +1,8 @@
 package gui;
 
+import java.util.Arrays;
+import java.util.Collections;
+        
 import logic.TopsController;
 
 public class PanelHome extends javax.swing.JPanel {
@@ -26,7 +29,6 @@ public class PanelHome extends javax.swing.JPanel {
         listNeighborhoods2 = new javax.swing.JLabel();
         listNeighborhoods1 = new javax.swing.JLabel();
         titleTop = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
         top1 = new javax.swing.JLabel();
         top2 = new javax.swing.JLabel();
         top3 = new javax.swing.JLabel();
@@ -109,105 +111,124 @@ public class PanelHome extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(titleMap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addGap(32, 32, 32)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(bogotaMap)
-                                        .addGap(18, 18, Short.MAX_VALUE)
-                                        .addComponent(listNeighborhoods1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(listNeighborhoods2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE)))
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(29, 29, 29)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(top2)
-                                            .addComponent(top1)
-                                            .addComponent(top5)
-                                            .addComponent(top4)
-                                            .addComponent(top3)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(btnNeighborhoods)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(btnObjects, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(btnModusOperandi, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(titleTop, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(imgInfo)))))))
+                .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(titleMap, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(bogotaMap, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(imgInfo)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(listNeighborhoods1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(listNeighborhoods2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(top3)
+                            .addComponent(top2)
+                            .addComponent(top4)
+                            .addComponent(top5)
+                            .addComponent(top1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnNeighborhoods)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(btnObjects, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnModusOperandi, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(titleTop, javax.swing.GroupLayout.PREFERRED_SIZE, 411, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(14, 14, 14)
                 .addComponent(titleMap)
-                .addGap(9, 9, 9)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(listNeighborhoods1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(listNeighborhoods2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(bogotaMap))
-                .addGap(2, 2, 2)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGap(8, 8, 8)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(titleTop)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(8, 8, 8)
                         .addComponent(top1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(top2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(top3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(top4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(top5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(btnNeighborhoods)
                             .addComponent(btnObjects)
                             .addComponent(btnModusOperandi)))
                     .addComponent(imgInfo))
-                .addContainerGap())
+                .addGap(33, 33, 33))
         );
     }// </editor-fold>//GEN-END:initComponents
     
+    public static String[] invertArray(String[] array) {
+        String aux;
+        for (int i = 0; i < array.length / 2; i++) {
+            aux = array[i];
+            array[i] = array[array.length - 1 - i];
+            array[array.length - 1 - i] = aux;
+        }
+
+        return array;
+    }
+    
     private void fillTop(String[] data) {
-        top1.setText(data[0]);
-        top2.setText(data[1]);
-        top3.setText(data[2]);
-        top4.setText(data[3]);
-        top5.setText(data[4]);
+        System.out.println(data[0]);
+        System.out.println(data[1]);
+        top1.setText("1. " + data[0]);
+        top2.setText("2. " + data[1]);
+        top3.setText("3. " + data[2]);
+        top4.setText("4. " + data[3]);
+        top5.setText("5. " + data[4]);
     }
     
     private void btnModusOperandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModusOperandiActionPerformed
-        
+        String[] data = TopsController.topModusOperandi();
+
+        Collections.reverse(Arrays.asList(data));
+        for (String e: data) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_btnModusOperandiActionPerformed
 
     private void btnNeighborhoodsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeighborhoodsActionPerformed
         String[] data = TopsController.topNeighborhoods();
-        for (String e: data) {
-            System.out.println(e);
+
+        Collections.reverse(Arrays.asList(data));
+        String[] array = new String[5];
+        for (int i=0; i<=data.length-1; i++) {
+            array[i] = data[i];
         }
+        System.out.println(Arrays.toString(data));
+        fillTop(array);
     }//GEN-LAST:event_btnNeighborhoodsActionPerformed
 
     private void btnObjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObjectsActionPerformed
-        // TODO add your handling code here:
+        String[] data = TopsController.topObjects();
+
+        for (String e: data) {
+            System.out.println(e);
+        }
     }//GEN-LAST:event_btnObjectsActionPerformed
 
 
@@ -217,7 +238,6 @@ public class PanelHome extends javax.swing.JPanel {
     private javax.swing.JButton btnNeighborhoods;
     private javax.swing.JButton btnObjects;
     private javax.swing.JLabel imgInfo;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblTitle;
     private javax.swing.JLabel listNeighborhoods1;
     private javax.swing.JLabel listNeighborhoods2;

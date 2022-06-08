@@ -430,8 +430,12 @@ public class PanelReports extends javax.swing.JPanel {
 
     private void btnViewMoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMoreActionPerformed
         int selectedRow = tableData.getSelectedRow();
-        String id = tableData.getValueAt(selectedRow, 0).toString();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(null, "Por favor seleccione un reporte.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
+            return;
+        }
         try {
+            String id = tableData.getValueAt(selectedRow, 0).toString();
             if (ReportController.existReport(id) == false) {
             JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
             return;
@@ -446,7 +450,6 @@ public class PanelReports extends javax.swing.JPanel {
 
     private void tableDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableDataMouseClicked
         int selectedRow = tableData.getSelectedRow();
-        System.out.println(selectedRow);
     }//GEN-LAST:event_tableDataMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

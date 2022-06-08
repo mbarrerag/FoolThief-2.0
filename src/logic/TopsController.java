@@ -50,19 +50,20 @@ public class TopsController {
     }
     
     public static String[] topNeighborhoods() {
-        System.out.println(treeTop.itsEmpty());
         if (treeTop.itsEmpty() == false) {
             treeTop.makeEmpty();
-            System.out.println("vaciando");
         }
+        
         int n = countNeighborhoods.length;
         for (int i=0; i<n; i++) {
-            System.out.println(neighborhoods[i] + ": " + countNeighborhoods[i]);
-            Tops top = new Tops(neighborhoods[i], countNeighborhoods[i]);
-            treeTop.insert(top);
+            if (countNeighborhoods[i] != 0) {
+                Tops top = new Tops(neighborhoods[i], countNeighborhoods[i]);
+                treeTop.insert(top);
+            }
         }
         
         String stringData = treeTop.inorderData();
+        System.out.println(stringData);
         String[] data = stringData.split(",");
         return data;
     }
@@ -71,17 +72,33 @@ public class TopsController {
         if (treeTop.itsEmpty() == false) {
             treeTop.makeEmpty();
         }
+        
         int n = countObjects.length;
         for (int i=0; i<n; i++) {
-            if (countObjects[i] != 0) {
                 Tops top = new Tops(objects[i], countObjects[i]);
+                treeTop.insert(top);
+        }
+        
+        String stringData = treeTop.inorderData();
+        String[] data = stringData.split(",");
+        return data;
+    }
+    
+    public static String[] topModusOperandi() {
+        if (treeTop.itsEmpty() == false) {
+            treeTop.makeEmpty();
+        }
+        
+        int n = countModusOperandi.length;
+        for (int i=0; i<n; i++) {
+            if (countModusOperandi[i] != 0) {
+                Tops top = new Tops(modusOperandi[i], countModusOperandi[i]);
                 treeTop.insert(top);
             }
         }
+        
         String stringData = treeTop.inorderData();
         String[] data = stringData.split(",");
-        
-        displayData();
         return data;
     }
     
