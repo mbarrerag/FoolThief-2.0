@@ -1,15 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logic;
 
-/**
- *
- * @author Stepe
- */
-public class NodeTree {
 
+public class NodeTree {
+    
     public Stolen data;
     public NodeTree left;
     public NodeTree right;
@@ -45,5 +38,4 @@ public class NodeTree {
     public void setRight(NodeTree right) {
         this.right = right;
     }
-
 }

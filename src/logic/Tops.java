@@ -1,40 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logic;
 
+
 public class Tops implements Comparable<Tops> {
+    public String data;
+    public int numRobberies; // Número de reportes en el lugar
 
-    public int number;
-    public String located;
-
-    public Tops(int number, String located) {
-
-        this.number = number;
-        this.located = located;
+    public Tops(String data, int number) {
+        this.numRobberies = number;
+        this.data = data;
     }
 
-    public int getNumber() {
-        return number;
+    public int getNumRobberies() {
+        return numRobberies;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setNumRobberies(int numRobberies) {
+        this.numRobberies = numRobberies;
     }
 
-    public String getLocated() {
-        return located;
+    public String getData() {
+        return data;
     }
 
-    public void setLocated(String located) {
-        this.located = located;
+    public void setData(String data) {
+        this.data = data;
     }
-
+    
+    @Override
     public int compareTo(Tops top) {
-        if (number > top.number) {
+        if (numRobberies > top.numRobberies) {
             return 1;
-        } else if (number < top.number) {
+        } else if (numRobberies < top.numRobberies) {
             return -1;
         } else {
             return 0;

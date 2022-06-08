@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logic;
 
 
@@ -14,10 +10,11 @@ public class AvlTree implements ImplementationTree<Stolen> {
     }
 
     @Override
-    public boolean isEmpty() {
+    public boolean itsEmpty() {
         return root == null;
     }
-
+    
+    @Override
     public void makeEmpty() {
         this.root = null;
     }

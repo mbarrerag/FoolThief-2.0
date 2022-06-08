@@ -27,14 +27,37 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="lblTitle" alignment="0" pref="780" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="bogotaMap" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="listNeighborhoods1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="listNeighborhoods" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+          <Component id="lblTitle" alignment="0" min="-2" pref="781" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="titleMap" min="-2" pref="572" max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <Component id="lblTitle" min="-2" pref="50" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="550" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="titleMap" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="bogotaMap" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="listNeighborhoods1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="listNeighborhoods" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
           </Group>
       </Group>
     </DimensionLayout>
@@ -47,6 +70,40 @@
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Inicio"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="bogotaMap">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/images/bogota_map.png"/>
+        </Property>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="titleMap">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="20" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Mapa de Bogot&#xe1; D.C."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="listNeighborhoods">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;p&gt; &#xa;11. Suba &lt;br&gt;&#xa;12. Barrios Unidos &lt;br&gt;&#xa;13. Teusaquillo &lt;br&gt;&#xa;14. Los Martires &lt;br&gt;&#xa;15. Antonio Nari&#xf1;o &lt;br&gt;&#xa;16. Puente Aranda &lt;br&gt;&#xa;17. Candelaria &lt;br&gt;&#xa;18. Rafael Uribe Uribe &lt;br&gt;&#xa;19. Ciudad Bolivar &lt;br&gt;&#xa;&lt;/p&gt; &#xa;&lt;/html&gt;"/>
+        <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="listNeighborhoods1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="14" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;p&gt; &#xa;1. Usaqu&#xe9;n &lt;br&gt;&#xa;2. Chapinero &lt;br&gt;&#xa;3. Santa Fe &lt;br&gt;&#xa;4. San Cristobal &lt;br&gt;&#xa;5. Usme &lt;br&gt;&#xa;6. Tunjuelito &lt;br&gt;&#xa;7. Bosa &lt;br&gt;&#xa;8. Kennedy &lt;br&gt;&#xa;9. Fontib&#xf3;n &lt;br&gt;&#xa;10. Engativ&#xe1; &lt;br&gt;&#xa;&lt;/p&gt; &#xa;&lt;/html&gt;"/>
+        <Property name="verticalAlignment" type="int" value="1"/>
       </Properties>
     </Component>
   </SubComponents>

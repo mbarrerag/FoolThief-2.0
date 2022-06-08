@@ -6,21 +6,23 @@ package logic;
 
 public interface ImplementationTree<T extends Comparable>  {
   
-    void insert(T obj);
+    boolean itsEmpty();
+    
+    void makeEmpty();
     
     boolean exist(int id);
     
     T get(int id);
     
+    void insert(T obj);
+    
     void delete(int id);
-    
-    boolean isLeaf();
-    
-    boolean isEmpty();
-    
+
     void preorder();
     
     void inorder();
     
     void postorder();
+    
+    boolean isLeaf();
 }    

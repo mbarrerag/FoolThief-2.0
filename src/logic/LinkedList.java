@@ -2,6 +2,7 @@ package logic;
 
 
 public class LinkedList<T> {
+    
     private NodeLinkedList<T> head;
     private NodeLinkedList<T> tail;
     private int length;

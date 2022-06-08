@@ -27,6 +27,10 @@ public class PanelHome extends javax.swing.JPanel {
     private void initComponents() {
 
         lblTitle = new javax.swing.JLabel();
+        bogotaMap = new javax.swing.JLabel();
+        titleMap = new javax.swing.JLabel();
+        listNeighborhoods = new javax.swing.JLabel();
+        listNeighborhoods1 = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(780, 600));
         setMinimumSize(new java.awt.Dimension(780, 600));
@@ -36,22 +40,58 @@ public class PanelHome extends javax.swing.JPanel {
         lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitle.setText("Inicio");
 
+        bogotaMap.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/bogota_map.png"))); // NOI18N
+
+        titleMap.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        titleMap.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleMap.setText("Mapa de Bogotá D.C.");
+
+        listNeighborhoods.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        listNeighborhoods.setText("<html>\n<p> \n11. Suba <br>\n12. Barrios Unidos <br>\n13. Teusaquillo <br>\n14. Los Martires <br>\n15. Antonio Nariño <br>\n16. Puente Aranda <br>\n17. Candelaria <br>\n18. Rafael Uribe Uribe <br>\n19. Ciudad Bolivar <br>\n</p> \n</html>");
+        listNeighborhoods.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        listNeighborhoods1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        listNeighborhoods1.setText("<html>\n<p> \n1. Usaquén <br>\n2. Chapinero <br>\n3. Santa Fe <br>\n4. San Cristobal <br>\n5. Usme <br>\n6. Tunjuelito <br>\n7. Bosa <br>\n8. Kennedy <br>\n9. Fontibón <br>\n10. Engativá <br>\n</p> \n</html>");
+        listNeighborhoods1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(lblTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bogotaMap)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(listNeighborhoods1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(listNeighborhoods, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+            .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(titleMap, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 550, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(titleMap)
+                .addGap(18, 18, 18)
+                .addComponent(bogotaMap)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(listNeighborhoods1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(listNeighborhoods, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel bogotaMap;
     private javax.swing.JLabel lblTitle;
+    private javax.swing.JLabel listNeighborhoods;
+    private javax.swing.JLabel listNeighborhoods1;
+    private javax.swing.JLabel titleMap;
     // End of variables declaration//GEN-END:variables
 }

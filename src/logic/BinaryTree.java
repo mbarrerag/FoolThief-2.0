@@ -1,25 +1,57 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package logic;
 
 
 public class BinaryTree implements ImplementationTree<Tops> {
 
-    NodeTree root;
     private BinaryTree left;
     private BinaryTree right;
     private Tops value;
 
     @Override
-    public boolean isEmpty() {
+    public boolean itsEmpty() {
         return value == null;
     }
 
     @Override
-    public boolean isLeaf() {
-        return value != null && left == null && right == null;
+    public void makeEmpty() {
+        value = null;
+        right = null;
+        left = null;
+    }
+
+    @Override
+    public boolean exist(int id) {
+        if (value == null) {
+            if (id == value.getNumRobberies()) {
+                return true;
+
+            } else if (id < value.getNumRobberies() && left != null) {
+                return left.exist(id);
+            } else if (id < value.getNumRobberies() && right != null) {
+                return right.exist(id);
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public Tops get(int id) {
+        if (value != null) {
+            if (id == value.getNumRobberies()) {
+                return value;
+            } else if (id < value.getNumRobberies() && left != null) {
+                return left.get(id);
+            } else if (id > value.getNumRobberies() && left != null) {
+                return right.get(id);
+            } else {
+                return null;
+            }
+        } else {
+            return null;
+        }
     }
 
     @Override
@@ -40,49 +72,18 @@ public class BinaryTree implements ImplementationTree<Tops> {
             } else {
                 throw new RuntimeException("Insertando un dato duplicado");
             }
-
         }
     }
 
     @Override
-    public boolean exist(int id) {
-        if (value == null) {
-            if (id == value.getNumber()) {
-                return true;
-
-            } else if (id < value.getNumber() && left != null) {
-                return left.exist(id);
-            } else if (id < value.getNumber() && right != null) {
-                return right.exist(id);
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
+    public void delete(int id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    @Override
-    public Tops get(int id) {
-        if (value != null) {
-            if (id == value.getNumber()) {
-                return value;
-            } else if (id < value.getNumber() && left != null) {
-                return left.get(id);
-            } else if (id > value.getNumber() && left != null) {
-                return right.get(id);
-            } else {
-                return null;
-            }
-        } else {
-            return null;
-        }
-    }
-    
     @Override
     public void preorder() {
         if (value != null) {
-            System.out.println(value.getNumber());
+            System.out.println(value.getNumRobberies());
             if (left != null) {
                 left.preorder();
             }
@@ -91,34 +92,49 @@ public class BinaryTree implements ImplementationTree<Tops> {
             }
         }
     }
-    public void inorder(){
-        if( value != null){
-            if(left != null){
-                left.inorder();
-            }
-            System.out.println(value.getNumber());
-            if( right != null){
-                right.inorder();
-    
-                }
-            }
-        }
 
     @Override
-    public void delete(int id) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void inorder() {
+        if (value != null) {
+            if (left != null) {
+                left.inorder();
+            }
+            System.out.println(value.getNumRobberies());
+            if (right != null) {
+                right.inorder();
+            }
+        }
     }
 
     @Override
     public void postorder() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (value != null) {
+            if (left != null) {
+                left.postorder();
+            }
+            if (right != null) {
+                right.postorder();
+            }
+            System.out.println(value.getNumRobberies());
+        }
+    }
+    
+    public String inorderData() {
+        String data = "";
+        if (value != null) {
+            if (left != null) {
+                left.postorder();
+            }
+            if (right != null) {
+                right.postorder();
+            }
+            data += "," + value.getNumRobberies();
+        }
+        return data;
+    }
+
+    @Override
+    public boolean isLeaf() {
+        return value != null && left == null && right == null;
     }
 }
-
-
-
-    
-
-
-     
-

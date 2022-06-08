@@ -5,7 +5,8 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.ImageIcon;
 
-import logic.Controller;
+import logic.ReportController;
+import logic.TopsController;
 
 
 public class PanelReports extends javax.swing.JPanel {
@@ -290,6 +291,7 @@ public class PanelReports extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+    
     private void cleanTable() {
         for (int i=0; i<tableData.getRowCount(); i++) {
             modelTable.removeRow(i);
@@ -299,7 +301,7 @@ public class PanelReports extends javax.swing.JPanel {
     
     private void fillTable() {
         cleanTable();
-        String[][] data = Controller.queryDataTable();
+        String[][] data = ReportController.queryDataTable();
         modelTable.setRowCount(0);
         for (String[] row : data) {
             modelTable.addRow(row);
@@ -311,15 +313,15 @@ public class PanelReports extends javax.swing.JPanel {
         cbxObject.removeAllItems();
         cbxModusOperandi.removeAllItems();
         
-        String[] neighborhoods = {"Usaquen", "Chapinero", "Santa Fe", "San Cristobal", "Usme", "Tunjuelito", "Bosa", "Kennedy", "Fontibon", "Engativa", "Suba", "Barrios Unidos", "Teusaquillo", "Los Martires", "Antonio Nariño", "Puente Aranda", "La Candelaria", "Rafael Uribe Uribe", "Ciudad Bolivar", "Sumapaz"};
+        String[] neighborhoods = TopsController.getNeighborhoods();
         for (String element: neighborhoods) {
             cbxNeighborhood.addItem(element);
         }
-        String[] objects = {"Billetera", "Celular", "Bolso", "Bicicleta", "Vehiculo", "Computador", "Papeles"};
+        String[] objects = TopsController.getObjects();
         for (String element: objects) {
             cbxObject.addItem(element);
         }
-        String[] modusOperandi = {"Raponazo", "Cosquilleo", "Asalto", "Paseo Millonario"};
+        String[] modusOperandi = TopsController.getModusOperandi();
         for (String element: modusOperandi) {
             cbxModusOperandi.addItem(element);
         }
@@ -359,8 +361,8 @@ public class PanelReports extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Por favor seleccione un reporte.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
         } else {
             String id = tableData.getValueAt(selectedRow, 0).toString();
-            if (Controller.isOnTheList(id)) {
-                Controller.updateReport(id, data);
+            if (ReportController.isOnTheList(id)) {
+                ReportController.updateReport(id, data);
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el reporte a modificar.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
             }
@@ -374,7 +376,8 @@ public class PanelReports extends javax.swing.JPanel {
         }
         
         String[] data = getValuesOfFields();
-        Controller.addReport(data);
+        ReportController.addReport(data);
+        TopsController.addReportCount(data[3], data[4], data[5]);
         cleanForm();
         fillTable();
     }//GEN-LAST:event_btnNewReportActionPerformed
@@ -393,13 +396,13 @@ public class PanelReports extends javax.swing.JPanel {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String id = JOptionPane.showInputDialog(null, "Inserte el ID del reporte: ", "Reportes", JOptionPane.QUESTION_MESSAGE);
         try {
-            if (Controller.existReport(id) == false) {
+            if (ReportController.existReport(id) == false) {
             JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
             return;
             }
-            String[] data = Controller.queryReportById(id);
+            String[] data = ReportController.queryReportById(id);
             ReportWindow reportWindow = new ReportWindow(data);
-            reportWindow.toFront();
+            reportWindow.setLocationRelativeTo(null);
         } catch (NumberFormatException e) {
             
         }
@@ -416,8 +419,8 @@ public class PanelReports extends javax.swing.JPanel {
         int dialog = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar el registro " + id + "?" , "Reportes", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, DANGERIMG);
         
         if (dialog == JOptionPane.YES_OPTION) {
-            if (Controller.isOnTheList(id)) {
-                Controller.deleteReport(id);
+            if (ReportController.isOnTheList(id)) {
+                ReportController.deleteReport(id);
             } else {
                 JOptionPane.showMessageDialog(null, "No existe el reporte a eliminar.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
             }
@@ -429,11 +432,11 @@ public class PanelReports extends javax.swing.JPanel {
         int selectedRow = tableData.getSelectedRow();
         String id = tableData.getValueAt(selectedRow, 0).toString();
         try {
-            if (Controller.existReport(id) == false) {
+            if (ReportController.existReport(id) == false) {
             JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
             return;
             }
-            String[] data = Controller.queryReportById(id);
+            String[] data = ReportController.queryReportById(id);
             ReportWindow reportWindow = new ReportWindow(data);
             reportWindow.setLocationRelativeTo(null);
         } catch (NumberFormatException e) {
