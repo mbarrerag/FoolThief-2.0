@@ -30,7 +30,15 @@ public class MainWindow extends javax.swing.JFrame {
         initComponents(); // Init all components from GUI
         
         controller = new EventController(this);
+        initPnlHome();
         beginTime();
+    }
+    
+    private void initPnlHome() {
+        container.removeAll();
+        container.add(pnlHome);
+        container.revalidate();
+        container.repaint();
     }
     
     private void beginTime() {
