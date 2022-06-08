@@ -1,13 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package gui;
 
-/**
- *
- * @author Usuario
- */
+import logic.TopsController;
+
 public class PanelHome extends javax.swing.JPanel {
 
     /**
@@ -29,8 +23,19 @@ public class PanelHome extends javax.swing.JPanel {
         lblTitle = new javax.swing.JLabel();
         bogotaMap = new javax.swing.JLabel();
         titleMap = new javax.swing.JLabel();
-        listNeighborhoods = new javax.swing.JLabel();
+        listNeighborhoods2 = new javax.swing.JLabel();
         listNeighborhoods1 = new javax.swing.JLabel();
+        titleTop = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        top1 = new javax.swing.JLabel();
+        top2 = new javax.swing.JLabel();
+        top3 = new javax.swing.JLabel();
+        top4 = new javax.swing.JLabel();
+        top5 = new javax.swing.JLabel();
+        btnNeighborhoods = new javax.swing.JButton();
+        btnObjects = new javax.swing.JButton();
+        btnModusOperandi = new javax.swing.JButton();
+        imgInfo = new javax.swing.JLabel();
 
         setMaximumSize(new java.awt.Dimension(780, 600));
         setMinimumSize(new java.awt.Dimension(780, 600));
@@ -46,30 +51,103 @@ public class PanelHome extends javax.swing.JPanel {
         titleMap.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         titleMap.setText("Mapa de Bogotá D.C.");
 
-        listNeighborhoods.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        listNeighborhoods.setText("<html>\n<p> \n11. Suba <br>\n12. Barrios Unidos <br>\n13. Teusaquillo <br>\n14. Los Martires <br>\n15. Antonio Nariño <br>\n16. Puente Aranda <br>\n17. Candelaria <br>\n18. Rafael Uribe Uribe <br>\n19. Ciudad Bolivar <br>\n</p> \n</html>");
-        listNeighborhoods.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        listNeighborhoods2.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        listNeighborhoods2.setText("<html>\n<p> \n11. Suba <br>\n12. Barrios Unidos <br>\n13. Teusaquillo <br>\n14. Los Martires <br>\n15. Antonio Nariño <br>\n16. Puente Aranda <br>\n17. Candelaria <br>\n18. Rafael Uribe Uribe <br>\n19. Ciudad Bolivar <br>\n</p> \n</html>");
+        listNeighborhoods2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         listNeighborhoods1.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        listNeighborhoods1.setText("<html>\n<p> \n1. Usaquén <br>\n2. Chapinero <br>\n3. Santa Fe <br>\n4. San Cristobal <br>\n5. Usme <br>\n6. Tunjuelito <br>\n7. Bosa <br>\n8. Kennedy <br>\n9. Fontibón <br>\n10. Engativá <br>\n</p> \n</html>");
+        listNeighborhoods1.setText("<html> <p>  1. Usaquén <br> 2. Chapinero <br> 3. Santa Fe <br> 4. San Cristobal <br> 5. Usme <br> 6. Tunjuelito <br> 7. Bosa <br> 8. Kennedy <br> 9. Fontibón <br> 10. Engativá <br> </p>  </html>");
         listNeighborhoods1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        titleTop.setFont(new java.awt.Font("Century Gothic", 0, 20)); // NOI18N
+        titleTop.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        titleTop.setText("Top");
+
+        top1.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        top1.setText("1. Primer puesto.");
+
+        top2.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        top2.setText("2. Segundo puesto.");
+
+        top3.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        top3.setText("3. Tercer puesto.");
+
+        top4.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        top4.setText("4. Cuarto puesto.");
+
+        top5.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        top5.setText("5. Quinto puesto.");
+
+        btnNeighborhoods.setText("Localidades");
+        btnNeighborhoods.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnNeighborhoods.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNeighborhoodsActionPerformed(evt);
+            }
+        });
+
+        btnObjects.setText("Objetos");
+        btnObjects.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnObjects.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnObjectsActionPerformed(evt);
+            }
+        });
+
+        btnModusOperandi.setText("Modus");
+        btnModusOperandi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnModusOperandi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModusOperandiActionPerformed(evt);
+            }
+        });
+
+        imgInfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/image_info.png"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(bogotaMap)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(listNeighborhoods1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(listNeighborhoods, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-            .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(titleMap, javax.swing.GroupLayout.PREFERRED_SIZE, 572, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 781, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(titleMap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGap(32, 32, 32)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(bogotaMap)
+                                        .addGap(18, 18, Short.MAX_VALUE)
+                                        .addComponent(listNeighborhoods1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(listNeighborhoods2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 0, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(top2)
+                                            .addComponent(top1)
+                                            .addComponent(top5)
+                                            .addComponent(top4)
+                                            .addComponent(top3)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(btnNeighborhoods)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(btnObjects, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(btnModusOperandi, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(titleTop, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(imgInfo)))))))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -77,21 +155,78 @@ public class PanelHome extends javax.swing.JPanel {
                 .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(titleMap)
-                .addGap(18, 18, 18)
-                .addComponent(bogotaMap)
-                .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(listNeighborhoods1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(listNeighborhoods, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(listNeighborhoods1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(listNeighborhoods2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(bogotaMap))
+                .addGap(2, 2, 2)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(titleTop)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(top1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(top2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(top3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(top4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(top5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnNeighborhoods)
+                            .addComponent(btnObjects)
+                            .addComponent(btnModusOperandi)))
+                    .addComponent(imgInfo))
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void fillTop(String[] data) {
+        top1.setText(data[0]);
+        top2.setText(data[1]);
+        top3.setText(data[2]);
+        top4.setText(data[3]);
+        top5.setText(data[4]);
+    }
+    
+    private void btnModusOperandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModusOperandiActionPerformed
+        
+    }//GEN-LAST:event_btnModusOperandiActionPerformed
+
+    private void btnNeighborhoodsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeighborhoodsActionPerformed
+        String[] data = TopsController.topNeighborhoods();
+        for (String e: data) {
+            System.out.println(e);
+        }
+    }//GEN-LAST:event_btnNeighborhoodsActionPerformed
+
+    private void btnObjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObjectsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnObjectsActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel bogotaMap;
+    private javax.swing.JButton btnModusOperandi;
+    private javax.swing.JButton btnNeighborhoods;
+    private javax.swing.JButton btnObjects;
+    private javax.swing.JLabel imgInfo;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblTitle;
-    private javax.swing.JLabel listNeighborhoods;
     private javax.swing.JLabel listNeighborhoods1;
+    private javax.swing.JLabel listNeighborhoods2;
     private javax.swing.JLabel titleMap;
+    private javax.swing.JLabel titleTop;
+    private javax.swing.JLabel top1;
+    private javax.swing.JLabel top2;
+    private javax.swing.JLabel top3;
+    private javax.swing.JLabel top4;
+    private javax.swing.JLabel top5;
     // End of variables declaration//GEN-END:variables
 }

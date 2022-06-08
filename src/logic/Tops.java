@@ -5,9 +5,9 @@ public class Tops implements Comparable<Tops> {
     public String data;
     public int numRobberies; // Número de reportes en el lugar
 
-    public Tops(String data, int number) {
-        this.numRobberies = number;
+    public Tops(String data, int numRobberies) {
         this.data = data;
+        this.numRobberies = numRobberies;
     }
 
     public int getNumRobberies() {

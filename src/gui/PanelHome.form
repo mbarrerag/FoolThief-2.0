@@ -27,21 +27,59 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="bogotaMap" min="-2" max="-2" attributes="0"/>
-                  <Group type="102" attributes="0">
-                      <Component id="listNeighborhoods1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="listNeighborhoods" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblTitle" alignment="0" min="-2" pref="781" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="titleMap" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="32" pref="32" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="bogotaMap" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="32767" attributes="0"/>
+                                      <Component id="listNeighborhoods1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="listNeighborhoods2" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jSeparator1" min="-2" pref="720" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="top2" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="top1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="top5" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="top4" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="top3" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="btnNeighborhoods" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                              <Component id="btnObjects" min="-2" pref="95" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="btnModusOperandi" min="-2" pref="95" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="titleTop" min="-2" pref="450" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="imgInfo" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
                   </Group>
               </Group>
-          </Group>
-          <Component id="lblTitle" alignment="0" min="-2" pref="781" max="-2" attributes="0"/>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="titleMap" min="-2" pref="572" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -51,13 +89,40 @@
               <Component id="lblTitle" min="-2" pref="50" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="titleMap" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="bogotaMap" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="listNeighborhoods1" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="listNeighborhoods" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="listNeighborhoods1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="listNeighborhoods2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="bogotaMap" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+              <Component id="jSeparator1" min="-2" pref="4" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="titleTop" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="top1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="top2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="top3" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="top4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="top5" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="btnNeighborhoods" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnObjects" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnModusOperandi" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="imgInfo" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -88,7 +153,7 @@
         <Property name="text" type="java.lang.String" value="Mapa de Bogot&#xe1; D.C."/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="listNeighborhoods">
+    <Component class="javax.swing.JLabel" name="listNeighborhoods2">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
@@ -102,8 +167,99 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Century Gothic" size="14" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="&lt;html&gt;&#xa;&lt;p&gt; &#xa;1. Usaqu&#xe9;n &lt;br&gt;&#xa;2. Chapinero &lt;br&gt;&#xa;3. Santa Fe &lt;br&gt;&#xa;4. San Cristobal &lt;br&gt;&#xa;5. Usme &lt;br&gt;&#xa;6. Tunjuelito &lt;br&gt;&#xa;7. Bosa &lt;br&gt;&#xa;8. Kennedy &lt;br&gt;&#xa;9. Fontib&#xf3;n &lt;br&gt;&#xa;10. Engativ&#xe1; &lt;br&gt;&#xa;&lt;/p&gt; &#xa;&lt;/html&gt;"/>
+        <Property name="text" type="java.lang.String" value="&lt;html&gt; &lt;p&gt;  1. Usaqu&#xe9;n &lt;br&gt; 2. Chapinero &lt;br&gt; 3. Santa Fe &lt;br&gt; 4. San Cristobal &lt;br&gt; 5. Usme &lt;br&gt; 6. Tunjuelito &lt;br&gt; 7. Bosa &lt;br&gt; 8. Kennedy &lt;br&gt; 9. Fontib&#xf3;n &lt;br&gt; 10. Engativ&#xe1; &lt;br&gt; &lt;/p&gt;  &lt;/html&gt;"/>
         <Property name="verticalAlignment" type="int" value="1"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="titleTop">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="20" style="0"/>
+        </Property>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="Top"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="top1">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="1. Primer puesto."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="top2">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="2. Segundo puesto."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="top3">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="3. Tercer puesto."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="top4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="4. Cuarto puesto."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="top5">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Century Gothic" size="18" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="5. Quinto puesto."/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnNeighborhoods">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Localidades"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNeighborhoodsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnObjects">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Objetos"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnObjectsActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="btnModusOperandi">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Modus"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="Cursor de Mano"/>
+        </Property>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnModusOperandiActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="imgInfo">
+      <Properties>
+        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+          <Image iconType="3" name="/images/image_info.png"/>
+        </Property>
       </Properties>
     </Component>
   </SubComponents>

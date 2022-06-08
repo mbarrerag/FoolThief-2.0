@@ -64,7 +64,7 @@ public class BinaryTree implements ImplementationTree<Tops> {
                     left = new BinaryTree();
                 }
                 left.insert(top);
-            } else if (top.compareTo(top) > 0) {
+            } else if (top.compareTo(top) >= 0) {
                 if (right == null) {
                     right = new BinaryTree();
                 }
@@ -83,7 +83,7 @@ public class BinaryTree implements ImplementationTree<Tops> {
     @Override
     public void preorder() {
         if (value != null) {
-            System.out.println(value.getNumRobberies());
+            System.out.println(value.getData());
             if (left != null) {
                 left.preorder();
             }
@@ -115,7 +115,7 @@ public class BinaryTree implements ImplementationTree<Tops> {
             if (right != null) {
                 right.postorder();
             }
-            System.out.println(value.getNumRobberies());
+            System.out.println(value.getData());
         }
     }
     
@@ -128,7 +128,7 @@ public class BinaryTree implements ImplementationTree<Tops> {
             if (right != null) {
                 right.postorder();
             }
-            data += "," + value.getNumRobberies();
+            data += "," + value.getData();
         }
         return data;
     }
