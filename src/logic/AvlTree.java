@@ -1,11 +1,9 @@
 package logic;
 
 /**
- * Reporte de robo, Arbol AVL
- * Arbol el cual guarda instancias del objeto Stolen (Reporte de robo), los cuales seran los datos 
- * generales de los reportes.
+ * Reporte de robo, Arbol AVL Arbol el cual guarda instancias del objeto Stolen
+ * (Reporte de robo), los cuales seran los datos generales de los reportes.
  */
-
 public class AvlTree implements ImplementationTree<Stolen> {
 
     private NodeTree root;
@@ -13,14 +11,17 @@ public class AvlTree implements ImplementationTree<Stolen> {
     AvlTree() {
         root = null;
     }
+
     /**
      * Verificacion del contenido del arbol
-     * @return root 
+     *
+     * @return root
      */
     @Override
     public boolean itsEmpty() {
         return root == null;
     }
+
     /**
      * Vacia el arbol, haciendo que la raiz sea null
      */
@@ -28,9 +29,11 @@ public class AvlTree implements ImplementationTree<Stolen> {
     public void makeEmpty() {
         this.root = null;
     }
+
     /**
-     * Al recibir una id, el arbol buscara dicha Id dentro de los nodos que contega
-     * para confirmar lo contiene
+     * Al recibir una id, el arbol buscara dicha Id dentro de los nodos que
+     * contega para confirmar lo contiene
+     *
      * @param id
      * @return True si encuentra el valor o false donde no lo contenga
      */
@@ -44,11 +47,13 @@ public class AvlTree implements ImplementationTree<Stolen> {
         }
         return false;
     }
-/**
-  *Retorna el valor .
-  * @param id
-  * @return Objeto Stolen
- */
+
+    /**
+     * Retorna el valor .
+     *
+     * @param id
+     * @return Objeto Stolen
+     */
     @Override
     public Stolen get(int id) {
         NodeTree node = searchNode(root, id);
@@ -57,8 +62,11 @@ public class AvlTree implements ImplementationTree<Stolen> {
         }
         return null;
     }
+
     /**
-     * Medotodo publico que realiza la insercion deontro del arbol al recibir una instancia tipo Stolen 
+     * Medotodo publico que realiza la insercion deontro del arbol al recibir
+     * una instancia tipo Stolen
+     *
      * @param obj instancia tipo Stolen
      */
     @Override
@@ -68,15 +76,18 @@ public class AvlTree implements ImplementationTree<Stolen> {
 
     /**
      * Metodo publico que permite eliminar una id del contenido del arbol
-     * @param id 
+     *
+     * @param id
      */
     @Override
     public void delete(int id) {
-        root = delete(root, id); 
+        root = delete(root, id);
     }
+
     /**
-     * Metodo privada el cual validadara si el arbol esta vacio o no, si el caso lo requiere el lugar 
-     * el cual debera ocupar un nuevo nodo
+     * Metodo privada el cual validadara si el arbol esta vacio o no, si el caso
+     * lo requiere el lugar el cual debera ocupar un nuevo nodo
+     *
      * @param node el cual contedra el objeto a insertar
      * @param obj tipo Stolen el cual se guardara
      * @return el nodo balanceado si es necesario
@@ -94,15 +105,16 @@ public class AvlTree implements ImplementationTree<Stolen> {
         }
         return rebalance(node);
     }
-    
-      /**
-       * Metodo privado para eliminar del arbol un valor determinado de id, por medio de comparaciones
-       * identificara el lugar del nodo y procedera a hacer las validaciones necesarias para eliminar
-       * 
-       * @param node en el cual se guardara el nuevo dato
-       * @param id a eliminar
-       * @return 
-       */
+
+    /**
+     * Metodo privado para eliminar del arbol un valor determinado de id, por
+     * medio de comparaciones identificara el lugar del nodo y procedera a hacer
+     * las validaciones necesarias para eliminar
+     *
+     * @param node en el cual se guardara el nuevo dato
+     * @param id a eliminar
+     * @return
+     */
     private NodeTree delete(NodeTree node, int id) {
         if (node == null) {
             return node;
@@ -128,12 +140,14 @@ public class AvlTree implements ImplementationTree<Stolen> {
         }
         return node;
     }
-   /**
-    * Buscara en el arbol el valor de la id idicado  
-    * @param node
-    * @param id valor el cual se quiere buscar
-    * @return un nodo si lo encuentra
-    */
+
+    /**
+     * Buscara en el arbol el valor de la id idicado
+     *
+     * @param node
+     * @param id valor el cual se quiere buscar
+     * @return un nodo si lo encuentra
+     */
     private NodeTree searchNode(NodeTree node, int id) {
         if (node == null || id == node.getData().getId()) {
             return node;
@@ -144,9 +158,12 @@ public class AvlTree implements ImplementationTree<Stolen> {
             return searchNode(node.right, id);
         }
     }
+
     /**
-     * Permitira conocer el hijo que se encuentre mas a la izquierda dentro del arbol (El dato menor)
-     * @param node 
+     * Permitira conocer el hijo que se encuentre mas a la izquierda dentro del
+     * arbol (El dato menor)
+     *
+     * @param node
      * @return El nodo menor si lo encuentra
      */
     private NodeTree mostLeftChild(NodeTree node) {
@@ -156,11 +173,14 @@ public class AvlTree implements ImplementationTree<Stolen> {
         }
         return current;
     }
-/**
- * Permite realizar un balanceo al evaluar cual deber ser el metodo de balanceo necesario una vez pasa la altura maxima
- * @param node
- * @return Retorna el nodo balanceado 
- */
+
+    /**
+     * Permite realizar un balanceo al evaluar cual deber ser el metodo de
+     * balanceo necesario una vez pasa la altura maxima
+     *
+     * @param node
+     * @return Retorna el nodo balanceado
+     */
     private NodeTree rebalance(NodeTree node) {
         updateHeight(node);
         int balance = getBalance(node);
@@ -182,12 +202,14 @@ public class AvlTree implements ImplementationTree<Stolen> {
         }
         return node;
     }
-/**
- * Permite realizar una rotacion hacia la derecha
- * en el subarbol que tiene como raiz el nodo pasado por parametro 
- * @param y 
- * @return x permite saber la altura una vez rotado
- */
+
+    /**
+     * Permite realizar una rotacion hacia la derecha en el subarbol que tiene
+     * como raiz el nodo pasado por parametro
+     *
+     * @param y
+     * @return x permite saber la altura una vez rotado
+     */
     private NodeTree rotateRight(NodeTree y) {
         NodeTree x = y.left;
         NodeTree z = x.right;
@@ -197,12 +219,14 @@ public class AvlTree implements ImplementationTree<Stolen> {
         updateHeight(x);
         return x;
     }
-/**
- * Permite realizar una rotacion hacia la izquierda
- * en el subarbol que tiene como raiz el nodo pasado por parametro.
- * @param y nodo raiz del subarbol a rotar
- * @return x permite nodo que pasa a ser la raiz
- */
+
+    /**
+     * Permite realizar una rotacion hacia la izquierda en el subarbol que tiene
+     * como raiz el nodo pasado por parametro.
+     *
+     * @param y nodo raiz del subarbol a rotar
+     * @return x permite nodo que pasa a ser la raiz
+     */
     private NodeTree rotateLeft(NodeTree y) {
         NodeTree x = y.right;
         NodeTree z = x.left;
@@ -212,18 +236,22 @@ public class AvlTree implements ImplementationTree<Stolen> {
         updateHeight(x);
         return x;
     }
-/**
- * Permite calcular la diferencia de la altura del nodo
- * @param node recibe la raiz del arbol rotado 
- */
+
+    /**
+     * Permite calcular la diferencia de la altura del nodo
+     *
+     * @param node recibe la raiz del arbol rotado
+     */
     private void updateHeight(NodeTree node) {
         node.height = 1 + Math.max(height(node.left), height(node.right));
     }
-/**
- * Compara la altura de los sub arboles del nodo 
- * @param node
- * @return Altura de los subarboles
- */
+
+    /**
+     * Compara la altura de los sub arboles del nodo
+     *
+     * @param node
+     * @return Altura de los subarboles
+     */
     public int getBalance(NodeTree node) {
         if (node == null) {
             return 0;
@@ -231,11 +259,13 @@ public class AvlTree implements ImplementationTree<Stolen> {
             return height(node.right) - height(node.left);
         }
     }
-/**
- * Permite conocer la altura de un node 
- * @param node
- * @return Altura del nodo
- */
+
+    /**
+     * Permite conocer la altura de un node
+     *
+     * @param node
+     * @return Altura del nodo
+     */
     private int height(NodeTree node) {
         if (node == null) {
             return -1;
@@ -251,26 +281,28 @@ public class AvlTree implements ImplementationTree<Stolen> {
     public void preorder() {
         preorderHelper(root);
     }
-    
+
     /**
      * Permite leer en forma la informacion en orden Inorder
      */
-
     @Override
     public void inorder() {
         inorderHelper(root);
     }
-     /**
+
+    /**
      * Permite leer en forma la informacion en orden postorder
      */
     @Override
     public void postorder() {
         postorderHelper(root);
     }
-/**
- * Permite seleccionar el order Inorder en el cual se presentaran los datos
- * @param node nodo raiz que sea ingresado
- */
+
+    /**
+     * Permite seleccionar el order Inorder en el cual se presentaran los datos
+     *
+     * @param node nodo raiz que sea ingresado
+     */
     private void inorderHelper(NodeTree node) {
         if (node != null) {
             inorderHelper(node.left);
@@ -278,10 +310,12 @@ public class AvlTree implements ImplementationTree<Stolen> {
             inorderHelper(node.right);
         }
     }
-/**
- * Permite seleccionar el order Preorder en el cual se presentaran los datos
- * @param node nodo raiz que sea ingresado 
- */
+
+    /**
+     * Permite seleccionar el order Preorder en el cual se presentaran los datos
+     *
+     * @param node nodo raiz que sea ingresado
+     */
     private void preorderHelper(NodeTree node) {
         if (node != null) {
             printData(node.getData());
@@ -289,11 +323,13 @@ public class AvlTree implements ImplementationTree<Stolen> {
             preorderHelper(node.right);
         }
     }
-/**
- * Permite seleccionar el order Preorder en el cual se presentaran los datos
- * @param node nodo raiz que sea ingresado
- * 
- */
+
+    /**
+     * Permite seleccionar el order Preorder en el cual se presentaran los datos
+     *
+     * @param node nodo raiz que sea ingresado
+     *
+     */
     private void postorderHelper(NodeTree node) {
         if (node != null) {
             postorderHelper(node.left);
@@ -301,10 +337,12 @@ public class AvlTree implements ImplementationTree<Stolen> {
             printData(node.getData());
         }
     }
-/**
- * Permite obtener la almacenada acerca de la informacion del informe 
- * @param stolen Parametro del objeto stolen
- */
+
+    /**
+     * Permite obtener la almacenada acerca de la informacion del informe
+     *
+     * @param stolen Parametro del objeto stolen
+     */
     private void printData(Stolen stolen) {
         System.out.println("=======================");
         System.out.println("ID: " + stolen.getId());

@@ -1,33 +1,37 @@
 package logic;
 
-
 public class BinaryTree implements ImplementationTree<Tops> {
 
     private BinaryTree left;
     private BinaryTree right;
     private Tops value;
-/**
- * Permite conocer si el arbol esta vacio
- * @return Si es null retornara true
- */
+
+    /**
+     * Permite conocer si el arbol esta vacio
+     *
+     * @return Si es null retornara true
+     */
     @Override
     public boolean itsEmpty() {
         return value == null;
     }
-/**
- * Permite vaciar el arbol
- */
+
+    /**
+     * Permite vaciar el arbol
+     */
     @Override
     public void makeEmpty() {
         value = null;
         right = null;
         left = null;
     }
-/**
- * Permite conocer si se encuentra una id en el arbol
- * @param id identificador a buscar 
- * @return Retorna true o false si encuentra o no el dato
- */
+
+    /**
+     * Permite conocer si se encuentra una id en el arbol
+     *
+     * @param id identificador a buscar
+     * @return Retorna true o false si encuentra o no el dato
+     */
     @Override
     public boolean exist(int id) {
         if (value == null) {
@@ -45,11 +49,13 @@ public class BinaryTree implements ImplementationTree<Tops> {
             return false;
         }
     }
-/**
- * Permite obtener el valor relacionado con la id 
- * @param id
- * @return true o false si se encontro dicho valor 
- */
+
+    /**
+     * Permite obtener el valor relacionado con la id
+     *
+     * @param id
+     * @return true o false si se encontro dicho valor
+     */
     @Override
     public Tops get(int id) {
         if (value != null) {
@@ -66,10 +72,12 @@ public class BinaryTree implements ImplementationTree<Tops> {
             return null;
         }
     }
-/**
- * Permite insertar valor en el arbol binario
- * @param top instacia del objeto a insertar 
- */
+
+    /**
+     * Permite insertar valor en el arbol binario
+     *
+     * @param top instacia del objeto a insertar
+     */
     @Override
     public void insert(Tops top) {
         if (value == null) {
@@ -96,9 +104,10 @@ public class BinaryTree implements ImplementationTree<Tops> {
     public void delete(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-/**
- * Permite leer en forma la informacion en orden preorder
- */
+
+    /**
+     * Permite leer en forma la informacion en orden preorder
+     */
     @Override
     public void preorder() {
         if (value != null) {
@@ -111,9 +120,10 @@ public class BinaryTree implements ImplementationTree<Tops> {
             }
         }
     }
-/**
- *Permite leer la informacion en orden inorder
- */
+
+    /**
+     * Permite leer la informacion en orden inorder
+     */
     @Override
     public void inorder() {
         if (value != null) {
@@ -126,9 +136,10 @@ public class BinaryTree implements ImplementationTree<Tops> {
             }
         }
     }
-/**
- * Permite leer la informacion en orden postorder
- */
+
+    /**
+     * Permite leer la informacion en orden postorder
+     */
     @Override
     public void postorder() {
         if (value != null) {
@@ -142,9 +153,9 @@ public class BinaryTree implements ImplementationTree<Tops> {
         }
     }
 
-/**
- * Permite leer la informacion en orden Inorder
- */    
+    /**
+     * Permite leer la informacion en orden Inorder
+     */
     public String inorderData() {
         String data = "";
         if (value != null) {
@@ -158,10 +169,12 @@ public class BinaryTree implements ImplementationTree<Tops> {
         }
         return data;
     }
-/**
- * Permite saber si es una hoja
- * @return 
- */
+
+    /**
+     * Permite saber si es una hoja
+     *
+     * @return
+     */
     @Override
     public boolean isLeaf() {
         return value != null && left == null && right == null;
