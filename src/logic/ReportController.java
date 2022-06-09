@@ -72,7 +72,9 @@ public class ReportController {
             String[][] data = new String[length][6];
             for (int i = 0; i < data.length; i++) {
                 Attempt infoNode = caseList.get(i);
-                data[i] = infoNode.getAllData();
+                if (infoNode != null) {
+                    data[i] = infoNode.getAllData();
+                }
             }
             return data;
         } catch (NegativeArraySizeException e) {
