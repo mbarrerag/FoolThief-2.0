@@ -422,20 +422,22 @@ public class PanelReports extends javax.swing.JPanel {
         }
 
         String id = tableData.getValueAt(selectedRow, 0).toString();
-        int dialog = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar el registro " + id + "?", "Reportes", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, DANGERIMG);
+        if (id != null) {
+            int dialog = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar el registro " + id + "?", "Reportes", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, DANGERIMG);
 
-        if (dialog == JOptionPane.YES_OPTION) {
-            if (ReportController.isOnTheList(id)) {
-                String neighborhood = tableData.getValueAt(selectedRow, 3).toString();
-                String object = tableData.getValueAt(selectedRow, 4).toString();
-                String modusOperandi = tableData.getValueAt(selectedRow, 5).toString();
-                TopsController.deleteReportCount(neighborhood, object, modusOperandi);
-                ReportController.deleteReport(id);
-            } else {
-                JOptionPane.showMessageDialog(null, "No existe el reporte a eliminar.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
+            if (dialog == JOptionPane.YES_OPTION) {
+                if (ReportController.isOnTheList(id)) {
+                    String neighborhood = tableData.getValueAt(selectedRow, 3).toString();
+                    String object = tableData.getValueAt(selectedRow, 4).toString();
+                    String modusOperandi = tableData.getValueAt(selectedRow, 5).toString();
+                    TopsController.deleteReportCount(neighborhood, object, modusOperandi);
+                    ReportController.deleteReport(id);
+                } else {
+                    JOptionPane.showMessageDialog(null, "No existe el reporte a eliminar.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
+                }
             }
+            fillTable();
         }
-        fillTable();
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnViewMoreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewMoreActionPerformed
