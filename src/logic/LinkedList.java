@@ -1,8 +1,13 @@
 package logic;
 
-
+/**
+ * Lista doblementa enlazada utilizada en el guardado de resumen de reporte,
+ * Lista que guarda instancias de la clase Attempt
+ *
+ * @param <T> Tipo de objeto que guardará la lista
+ */
 public class LinkedList<T> {
-    
+
     private NodeLinkedList<T> head;
     private NodeLinkedList<T> tail;
     private int length;
@@ -13,19 +18,41 @@ public class LinkedList<T> {
         length = 0;
     }
 
+    /**
+     * Retorna el número de elementos contenidos en la lista.
+     *
+     * @return int: tamaño de la lista
+     */
     public int size() {
         return length;
     }
-    
+
+    /**
+     * Verifica si la lista no tiene elementos.
+     *
+     * @return boolean:
+     * <ul>
+     * <li>true: la lista esta vacia</li>
+     * <li>false: la lista no esta vacia</li>
+     * </ul>
+     */
     public boolean itsEmpty() {
         return head == null;
     }
 
+    /**
+     * Vacia completamente la lista.
+     */
     public void makeEmpty() {
         head = null;
         tail = null;
     }
 
+    /**
+     * Agrega un elemento al principio de la lista.
+     *
+     * @param data
+     */
     public void addFirst(T data) {
         NodeLinkedList<T> node = new NodeLinkedList<T>(data);
         if (head == null) {
@@ -38,6 +65,11 @@ public class LinkedList<T> {
         }
     }
 
+    /**
+     * Agrega un elemento al final de la lista.
+     *
+     * @param data
+     */
     public void add(T data) {
         NodeLinkedList<T> node = new NodeLinkedList<T>(data);
         if (head == null) {
@@ -51,6 +83,13 @@ public class LinkedList<T> {
         length++;
     }
 
+    /**
+     * Recarga del método add(T data), recibe un indice e inserta el elemento en
+     * el indice especificado.
+     *
+     * @param data
+     * @param index
+     */
     public void add(T data, int index) {
         if (index == length) {
             add(data);
@@ -77,6 +116,11 @@ public class LinkedList<T> {
         length++;
     }
 
+    /**
+     * Retorna el objeto contenido en el primer nodo de la lista.
+     *
+     * @return T
+     */
     public T getFirst() {
         if (head == null) {
             return null;
@@ -85,6 +129,12 @@ public class LinkedList<T> {
         }
     }
 
+    /**
+     * Retorna el objeto contenido en el i-ésimo nodo de la lista.
+     *
+     * @param index
+     * @return T
+     */
     public T get(int index) {
         if (index == length) {
             getLast();
@@ -97,14 +147,18 @@ public class LinkedList<T> {
             }
             if (counter != index) {
                 return null;
-            }
-            else if (counter == index) {
+            } else if (counter == index) {
                 return pointer.getData();
             }
         }
         return null;
     }
 
+    /**
+     * Retorna el objeto contenido en el último nodo de la lista.
+     *
+     * @return T
+     */
     public T getLast() {
         if (head == null) {
             return null;
@@ -113,6 +167,9 @@ public class LinkedList<T> {
         }
     }
 
+    /**
+     * Elimina el primer nodo de la lista.
+     */
     public void removeFirst() {
         if (head != null) {
             head = head.getNext();
@@ -120,6 +177,11 @@ public class LinkedList<T> {
         }
     }
 
+    /**
+     * Elimina el i-ésimo nodo de la lista.
+     *
+     * @param index
+     */
     public void remove(int index) {
         if (head != null) {
             if (index == 0) {
@@ -142,6 +204,9 @@ public class LinkedList<T> {
         }
     }
 
+    /**
+     * Elimina el último nodo de la lista.
+     */
     public void removeLast() {
         if (head != null) {
             NodeLinkedList<T> last = tail;
@@ -151,14 +216,17 @@ public class LinkedList<T> {
             length--;
         }
     }
-    
+
+    /**
+     * Método para prueba, recorre e imprime todos los datos de la lista.
+     */
     public void displayElements() {
         if (head == null) {
             System.out.println("No elements");
         } else {
             NodeLinkedList<T> pointer = head;
             while (pointer != null) {
-                System.out.println(pointer.getData());
+                System.out.println(pointer.getData().toString());
                 pointer = pointer.getNext();
             }
         }

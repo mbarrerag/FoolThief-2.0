@@ -14,40 +14,41 @@ import java.time.LocalDate;
  * @author Usuario
  */
 public class MainWindow extends javax.swing.JFrame {
+
     public EventController controller;
-    
+
     private PanelHome pnlHome = new PanelHome();
     private PanelReports pnlReports = new PanelReports();
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-    
+
     /**
      * Creates new form MainWindow
      */
     public MainWindow() {
-        
+
         setIconImage(new ImageIcon(getClass().getResource("/images/app_icon.png")).getImage());
         setVisible(true);
         initComponents(); // Init all components from GUI
-        
+
         controller = new EventController(this);
         initPnlHome();
         beginTime();
     }
-    
+
     private void initPnlHome() {
         container.removeAll();
         container.add(pnlHome);
         container.revalidate();
         container.repaint();
     }
-    
+
     private void beginTime() {
         LocalDate now = LocalDate.now();
         int day = now.getDayOfMonth();
         int month = now.getMonthValue();
         int year = now.getYear();
-        
-        actualDate.setText(day + "/"+ month + "/" + year);
+
+        actualDate.setText(day + "/" + month + "/" + year);
         while (true) {
             try {
                 Thread.sleep(500);
@@ -55,7 +56,7 @@ public class MainWindow extends javax.swing.JFrame {
             } catch (InterruptedException e) {
                 // Nothing
             }
-        }   
+        }
     }
 
     /**

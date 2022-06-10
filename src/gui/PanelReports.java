@@ -8,24 +8,24 @@ import javax.swing.ImageIcon;
 import logic.ReportController;
 import logic.TopsController;
 
-
 public class PanelReports extends javax.swing.JPanel {
-    
+
     private final ImageIcon ERRORIMG = new ImageIcon(getClass().getResource("/images/img_error.png"));
     private final ImageIcon DANGERIMG = new ImageIcon(getClass().getResource("/images/img_danger.png"));
     DefaultTableModel modelTable;
+
     /**
      * Creates new form PanelReports
      */
     public PanelReports() {
         initComponents();
         modelTable = (DefaultTableModel) tableData.getModel();
-        
+
         fillCombobox();
         cleanForm();
         fillTable();
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -291,14 +291,14 @@ public class PanelReports extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+
     private void cleanTable() {
-        for (int i=0; i<tableData.getRowCount(); i++) {
+        for (int i = 0; i < tableData.getRowCount(); i++) {
             modelTable.removeRow(i);
             i -= 1;
         }
     }
-    
+
     private void fillTable() {
         cleanTable();
         String[][] data = ReportController.queryDataTable();
@@ -307,32 +307,32 @@ public class PanelReports extends javax.swing.JPanel {
             modelTable.addRow(row);
         }
     }
-    
+
     private void fillCombobox() {
         cbxNeighborhood.removeAllItems();
         cbxObject.removeAllItems();
         cbxModusOperandi.removeAllItems();
-        
+
         String[] neighborhoods = TopsController.getNeighborhoods();
-        for (String element: neighborhoods) {
+        for (String element : neighborhoods) {
             cbxNeighborhood.addItem(element);
         }
         String[] objects = TopsController.getObjects();
-        for (String element: objects) {
+        for (String element : objects) {
             cbxObject.addItem(element);
         }
         String[] modusOperandi = TopsController.getModusOperandi();
-        for (String element: modusOperandi) {
+        for (String element : modusOperandi) {
             cbxModusOperandi.addItem(element);
         }
     }
-    
+
     private boolean checkEmptyFields() {
-        return txtName.getText().isEmpty() || txtHour.getText().isEmpty() 
+        return txtName.getText().isEmpty() || txtHour.getText().isEmpty()
                 || txtDescription.getText().isEmpty() || txtPlace.getText().isEmpty()
                 || dtchDate.getDate() == null;
     }
-    
+
     private void cleanForm() {
         txtName.setText("");
         txtHour.setText("00:00");
@@ -342,7 +342,7 @@ public class PanelReports extends javax.swing.JPanel {
         cbxObject.setSelectedIndex(0);
         cbxModusOperandi.setSelectedIndex(0);
     }
-    
+
     private String[] getValuesOfFields() {
         Calendar calendar = dtchDate.getCalendar();
         int day = calendar.get(Calendar.DATE);
@@ -350,11 +350,11 @@ public class PanelReports extends javax.swing.JPanel {
         int year = calendar.get(Calendar.YEAR);
         String date = day + "/" + month + "/" + year;
         String[] data = {txtName.getText(), date, txtHour.getText(), cbxNeighborhood.getSelectedItem().toString(), cbxObject.getSelectedItem().toString(), cbxModusOperandi.getSelectedItem().toString(), txtPlace.getText(), txtDescription.getText()};
-        
+
         return data;
     }
     // ========================================================================
-    
+
     private void updateData() {
         int selectedRow = tableData.getSelectedRow();
         String[] data = getValuesOfFields();
@@ -374,26 +374,26 @@ public class PanelReports extends javax.swing.JPanel {
             }
         }
     }
-    
+
     private void btnNewReportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNewReportActionPerformed
         if (checkEmptyFields()) {
             JOptionPane.showMessageDialog(null, "Por favor, rellene todos los campos del formulario.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
             return;
         }
-        
+
         String[] data = getValuesOfFields();
         ReportController.addReport(data);
         TopsController.addReportCount(data[3], data[4], data[5]);
         cleanForm();
         fillTable();
     }//GEN-LAST:event_btnNewReportActionPerformed
-    
+
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateActionPerformed
         if (checkEmptyFields()) {
             JOptionPane.showMessageDialog(null, "Por favor, rellene todos los campos del formulario.", "Reportes", JOptionPane.OK_OPTION, ERRORIMG);
             return;
         }
-        
+
         updateData();
         cleanForm();
         fillTable();
@@ -403,14 +403,14 @@ public class PanelReports extends javax.swing.JPanel {
         String id = JOptionPane.showInputDialog(null, "Inserte el ID del reporte: ", "Reportes", JOptionPane.QUESTION_MESSAGE);
         try {
             if (ReportController.existReport(id) == false) {
-            JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
-            return;
+                JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
+                return;
             }
             String[] data = ReportController.queryReportById(id);
             ReportWindow reportWindow = new ReportWindow(data);
             reportWindow.setLocationRelativeTo(null);
         } catch (NumberFormatException e) {
-            
+
         }
     }//GEN-LAST:event_btnSearchActionPerformed
 
@@ -420,10 +420,10 @@ public class PanelReports extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Por favor seleccione un reporte.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
             return;
         }
-        
+
         String id = tableData.getValueAt(selectedRow, 0).toString();
-        int dialog = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar el registro " + id + "?" , "Reportes", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, DANGERIMG);
-        
+        int dialog = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar el registro " + id + "?", "Reportes", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, DANGERIMG);
+
         if (dialog == JOptionPane.YES_OPTION) {
             if (ReportController.isOnTheList(id)) {
                 String neighborhood = tableData.getValueAt(selectedRow, 3).toString();
@@ -447,14 +447,14 @@ public class PanelReports extends javax.swing.JPanel {
         try {
             String id = tableData.getValueAt(selectedRow, 0).toString();
             if (ReportController.existReport(id) == false) {
-            JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
-            return;
+                JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
+                return;
             }
             String[] data = ReportController.queryReportById(id);
             ReportWindow reportWindow = new ReportWindow(data);
             reportWindow.setLocationRelativeTo(null);
         } catch (NumberFormatException e) {
-            
+
         }
     }//GEN-LAST:event_btnViewMoreActionPerformed
 

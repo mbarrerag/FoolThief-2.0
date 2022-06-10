@@ -5,13 +5,11 @@ import logic.TopsController;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 
 public class FilePersistence {
 
-    String pathFile = "C:\\Users\\Usuario\\Documents\\Netbeans Projects\\FoolThief\\FoolThief.v2\\src\\persistence\\Pruebas100mil.txt";
+    String pathFile = "C:\\Users\\Usuario\\Documents\\Netbeans Projects\\FoolThief\\FoolThief.v2\\src\\persistence\\Pruebas100Coma.txt";
 
     public static String[] string;
     public static String[] lines;
@@ -38,14 +36,14 @@ public class FilePersistence {
             
         }
 
-        for (int i = 0; i < 800000; i++) {
+        for (int i = 0; i < 800; i++) {
             lines = text.split(",");
             if (lines == null) {
                 break;
             }
         }
 
-        for (int i = 0; i < 92795; i++) {
+        for (int i = 0; i < 100; i++) {
 
             y++;
 

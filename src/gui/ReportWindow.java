@@ -3,7 +3,9 @@ package gui;
 import java.awt.Color;
 
 public class ReportWindow extends javax.swing.JFrame {
+
     String[] data;
+
     /**
      * Creates new form ReportWindow
      */
@@ -11,15 +13,14 @@ public class ReportWindow extends javax.swing.JFrame {
         this.data = data;
         setTitle("Reporte ID: " + data[0]);
         setVisible(true);
-        
-        
+
         initComponents();
         modifyColorDisabled();
-        
+
         cleanData();
         fillData();
     }
-    
+
     private void modifyColorDisabled() {
         txtName.setDisabledTextColor(Color.black);
         txtName.setDisabledTextColor(Color.black);
@@ -31,7 +32,7 @@ public class ReportWindow extends javax.swing.JFrame {
         txtPlace.setDisabledTextColor(Color.black);
         txtDescription.setDisabledTextColor(Color.black);
     }
-    
+
     private void cleanData() {
         lblTitle.setText("Reporte #");
         txtName.setText("");
@@ -43,7 +44,7 @@ public class ReportWindow extends javax.swing.JFrame {
         txtPlace.setText("");
         txtDescription.setText("");
     }
-    
+
     private void fillData() {
         lblTitle.setText("Reporte #" + data[0]);
         txtName.setText(data[1]);

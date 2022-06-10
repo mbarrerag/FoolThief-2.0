@@ -1,7 +1,11 @@
 package logic;
 
-
+/**
+ * Está clase guardará los datos que permitirán organizar los datos con el árbol
+ * binario para la función de Tops.
+ */
 public class Tops implements Comparable<Tops> {
+
     public String data;
     public int numRobberies; // Número de reportes en el lugar
 
@@ -25,7 +29,7 @@ public class Tops implements Comparable<Tops> {
     public void setData(String data) {
         this.data = data;
     }
-    
+
     @Override
     public int compareTo(Tops top) {
         if (numRobberies > top.numRobberies) {

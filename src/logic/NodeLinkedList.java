@@ -1,6 +1,10 @@
 package logic;
 
-
+/**
+ * Clase que utilizará la clase LinkedList para el guardado de datos.
+ *
+ * @param <T>
+ */
 public class NodeLinkedList<T> {
 
     private NodeLinkedList<T> next;

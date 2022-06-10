@@ -1,8 +1,10 @@
 package logic;
 
-
+/**
+ * Clase Nodo utilizada en el árbol AVL.
+ */
 public class NodeTree {
-    
+
     public Stolen data;
     public NodeTree left;
     public NodeTree right;

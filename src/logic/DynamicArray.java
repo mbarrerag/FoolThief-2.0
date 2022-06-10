@@ -1,6 +1,5 @@
 package logic;
 
-
 public class DynamicArray {
 
     int sizeofarray = 0;
@@ -82,6 +81,9 @@ public class DynamicArray {
         return resoult;
     }
 
+    /**
+     * Permite hacer nulo el ultimo elemento del arreglo dinamico
+     */
     public void Eliminar() {
         for (int i = 0; i == count; i++) {
             if (i == count) {
@@ -91,9 +93,4 @@ public class DynamicArray {
             }
         }
     }
-    /**
-     * Permite hacer nulo el ultimo elemento del arreglo dinamico
-     */
 }
-
-

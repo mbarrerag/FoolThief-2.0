@@ -1,8 +1,11 @@
 package logic;
 
-
+/**
+ * Está clase se encarga del guardado de los datos del reporte general. Se
+ * utiliza en la consulta de datos completo (Busqueda).
+ */
 public class Stolen implements Comparable<Stolen> {
-    
+
     private int id;
     private String name;
     private String date;
@@ -12,15 +15,15 @@ public class Stolen implements Comparable<Stolen> {
     private String modusOperandi;
     private String place;
     private String description;
-    
+
     public int getId() {
         return id;
     }
-    
+
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -84,7 +87,7 @@ public class Stolen implements Comparable<Stolen> {
     public void setModusOperandi(String modusOperandi) {
         this.modusOperandi = modusOperandi;
     }
-    
+
     public String[] getAllData() {
         String[] data = new String[9];
         data[0] = String.valueOf(id); // Converting id from int to String
@@ -98,7 +101,7 @@ public class Stolen implements Comparable<Stolen> {
         data[8] = description;
         return data;
     }
-    
+
     public void setAllData(String[] data) {
         id = Integer.parseInt(data[0]);
         name = data[1];
@@ -122,4 +125,3 @@ public class Stolen implements Comparable<Stolen> {
         }
     }
 }
-

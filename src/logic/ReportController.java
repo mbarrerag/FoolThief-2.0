@@ -1,22 +1,23 @@
 package logic;
 
-
+/**
+ * Esta clase se encarga de ser intermediario entre la capa de interfaz y la
+ * capa de persistencia.
+ */
 public class ReportController {
 
-    public static AvlTree reportTree = new AvlTree();
-    public static LinkedList<Attempt> caseList = new LinkedList<>();
+    public static AvlTree reportTree = new AvlTree(); // Guardado reporte general
+    public static LinkedList<Attempt> caseList = new LinkedList<>(); // Guardado resumen de reporte
+    public static int id = 0; // Conteo de IDs para la inserción de datos
 
-    public static int id = 0;
-    
-    /*
-    public static void generateId(int lastId) {
-        try {
-
-        } catch (NegativeArraySizeException e) {
-
-        }
-    }*/
-
+    /**
+     * Dado un ID, busca el dato en una lista y devuelve el índice donde se
+     * encuentra o en caso de no encontrarlo retorna -1.
+     *
+     * @param id
+     * @return int que describe el indice donde se encuentra el objeto con el
+     * ID.
+     */
     private static int browseReport(int id) {
         int length = caseList.size();
         boolean flag = true;
@@ -39,12 +40,27 @@ public class ReportController {
         }
     }
 
+    /**
+     * Busca el id y retorna si esta en la lista, haciendo uso del método
+     * anterior y retorna un entero dada la salida de esta.
+     *
+     * @param id
+     * @return <ul>
+     * <li>true: existe el elemento en la lista.</li>
+     * <li>false: no existe el elemento en la lista.</li>
+     * </ul>
+     */
     public static boolean isOnTheList(String id) {
         int idInt = Integer.parseInt(id);
         int index = browseReport(idInt);
         return index != -1;
     }
 
+    /**
+     * Recibe un arreglo con los datos y los agrega en el árbol y la lista.
+     *
+     * @param data
+     */
     public static void addReport(String[] data) {
         id++;
         // CODIGO DE GENERACIÓN DE ID AQUÍ
@@ -66,6 +82,12 @@ public class ReportController {
         caseList.add(report);
     }
 
+    /**
+     * Esta función retorna un matriz con todos los datos guardados en la lista
+     * (resumen de reportes) para la lectura de esta en la interfaz.
+     *
+     * @return String[][] matriz con todos los datos guardados en la lista.
+     */
     public static String[][] queryDataTable() {
         try {
             int length = caseList.size();
@@ -83,11 +105,28 @@ public class ReportController {
         }
     }
 
+    /**
+     * Retorna si dado un ID, existe un elemento identificado con este en el
+     * árbol AVL
+     *
+     * @param id
+     * @return <ul>
+     * <li>true: existe el elemento en el árbol.</li>
+     * <li>false: no existe el elemento en el árbol.</li>
+     * </ul>
+     */
     public static boolean existReport(String id) {
         int idInt = Integer.parseInt(id);
         return reportTree.exist(idInt);
     }
 
+    /**
+     * Retorna un arreglo con los datos guardados en el árbol para su lectura en
+     * la interfaz.
+     *
+     * @param id
+     * @return String[] data.
+     */
     public static String[] queryReportById(String id) {
         try {
             int idInt = Integer.parseInt(id);
@@ -104,6 +143,13 @@ public class ReportController {
         }
     }
 
+    /**
+     * Dado un ID y un arreglo se busca el elemento y se actualiza los datos
+     * tanto en el árbol como en la lista.
+     *
+     * @param id
+     * @param data
+     */
     public static void updateReport(String id, String[] data) {
         int idInt = Integer.parseInt(id);
         int index = browseReport(idInt);
@@ -129,6 +175,11 @@ public class ReportController {
         }
     }
 
+    /**
+     * Dado un ID elimina el dato en el árbol y la lista.
+     *
+     * @param id
+     */
     public static void deleteReport(String id) {
         int idInt = Integer.parseInt(id);
         int index = browseReport(idInt);

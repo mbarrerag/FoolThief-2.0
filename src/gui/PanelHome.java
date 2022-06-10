@@ -2,7 +2,7 @@ package gui;
 
 import java.util.Arrays;
 import java.util.Collections;
-        
+
 import logic.TopsController;
 
 public class PanelHome extends javax.swing.JPanel {
@@ -191,7 +191,7 @@ public class PanelHome extends javax.swing.JPanel {
                 .addGap(33, 33, 33))
         );
     }// </editor-fold>//GEN-END:initComponents
-    
+
     public static String[] invertArray(String[] array) {
         String aux;
         for (int i = 0; i < array.length / 2; i++) {
@@ -202,7 +202,7 @@ public class PanelHome extends javax.swing.JPanel {
 
         return array;
     }
-    
+
     private void fillTop(String[] data, String messageTitle) {
         titleTop.setText(messageTitle);
         top1.setText("1. " + data[0]);
@@ -211,25 +211,25 @@ public class PanelHome extends javax.swing.JPanel {
         top4.setText("4. " + data[3]);
         top5.setText("5. " + data[4]);
     }
-    
+
     private void btnModusOperandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModusOperandiActionPerformed
         String[] data = TopsController.topModusOperandi();
         Collections.reverse(Arrays.asList(data));
-        
+
         fillTop(data, "Modalidades de robo más utilizadas");
     }//GEN-LAST:event_btnModusOperandiActionPerformed
 
     private void btnNeighborhoodsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeighborhoodsActionPerformed
         String[] data = TopsController.topNeighborhoods();
         Collections.reverse(Arrays.asList(data));
-        
+
         fillTop(data, "Localidades con más hurtos");
     }//GEN-LAST:event_btnNeighborhoodsActionPerformed
 
     private void btnObjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObjectsActionPerformed
         String[] data = TopsController.topObjects();
         Collections.reverse(Arrays.asList(data));
-        
+
         fillTop(data, "Objetos más robados");
     }//GEN-LAST:event_btnObjectsActionPerformed
 

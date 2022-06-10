@@ -92,7 +92,6 @@ public class AvlTree implements ImplementationTree<Stolen> {
      * @param obj tipo Stolen el cual se guardara
      * @return el nodo balanceado si es necesario
      */
-
     private NodeTree insert(NodeTree node, Stolen obj) {
         if (node == null) {
             return new NodeTree(obj);
@@ -111,9 +110,9 @@ public class AvlTree implements ImplementationTree<Stolen> {
      * medio de comparaciones identificara el lugar del nodo y procedera a hacer
      * las validaciones necesarias para eliminar
      *
-     * @param node en el cual se guardara el nuevo dato
-     * @param id a eliminar
-     * @return
+     * @param node en el cual se guardara el nuevo dato.
+     * @param id a eliminar.
+     * @return nodo sin el nodo que se ordeno eliminar.
      */
     private NodeTree delete(NodeTree node, int id) {
         if (node == null) {

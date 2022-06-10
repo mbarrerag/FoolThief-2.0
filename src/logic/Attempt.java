@@ -1,14 +1,18 @@
 package logic;
 
-
+/**
+ * Está clase se encarga de guardar los datos de resumen de un reporte. Estos
+ * datos serán mostrados en la tabla principal en la interfaz.
+ */
 public class Attempt {
+
     private int id;
     private String date;
     private String hour;
     private String neighborhood;
     private String object;
     private String modusOperandi;
-    
+
     public int getId() {
         return id;
     }
@@ -56,7 +60,7 @@ public class Attempt {
     public void setModusOperandi(String modusOperandi) {
         this.modusOperandi = modusOperandi;
     }
-    
+
     public String[] getAllData() {
         String[] data = new String[6];
         data[0] = String.valueOf(id); // Converting id from int to String
@@ -67,7 +71,7 @@ public class Attempt {
         data[5] = modusOperandi;
         return data;
     }
-    
+
     public void setAllData(String[] data) {
         id = Integer.parseInt(data[0]); // Converting id from String to int
         date = data[1];
