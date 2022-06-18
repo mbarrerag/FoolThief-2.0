@@ -7,7 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 
-public class FilePersistence {
+public class DataLoader {
 
     String pathFile = "C:\\Users\\Usuario\\Documents\\Netbeans Projects\\FoolThief\\FoolThief.v2\\src\\persistence\\Pruebas100Coma.txt";
 

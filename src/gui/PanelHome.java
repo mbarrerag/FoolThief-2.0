@@ -1,8 +1,5 @@
 package gui;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 import logic.TopsController;
 
 public class PanelHome extends javax.swing.JPanel {
@@ -214,23 +211,23 @@ public class PanelHome extends javax.swing.JPanel {
 
     private void btnModusOperandiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModusOperandiActionPerformed
         String[] data = TopsController.topModusOperandi();
-        Collections.reverse(Arrays.asList(data));
+        String[] invData = invertArray(data);
 
-        fillTop(data, "Modalidades de robo más utilizadas");
+        fillTop(invData, "Modalidades de robo más utilizadas");
     }//GEN-LAST:event_btnModusOperandiActionPerformed
 
     private void btnNeighborhoodsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNeighborhoodsActionPerformed
         String[] data = TopsController.topNeighborhoods();
-        Collections.reverse(Arrays.asList(data));
+        String[] invData = invertArray(data);
 
-        fillTop(data, "Localidades con más hurtos");
+        fillTop(invData, "Localidades con más hurtos");
     }//GEN-LAST:event_btnNeighborhoodsActionPerformed
 
     private void btnObjectsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnObjectsActionPerformed
         String[] data = TopsController.topObjects();
-        Collections.reverse(Arrays.asList(data));
+        String[] invData = invertArray(data);
 
-        fillTop(data, "Objetos más robados");
+        fillTop(invData, "Objetos más robados");
     }//GEN-LAST:event_btnObjectsActionPerformed
 
 

@@ -23,7 +23,7 @@ public class AvlTree implements ImplementationTree<Stolen> {
     }
 
     /**
-     * Vacia el arbol, haciendo que la raiz sea null
+     * Vacia el arbol, haciendo que la raiz sea null.
      */
     @Override
     public void makeEmpty() {
@@ -49,7 +49,7 @@ public class AvlTree implements ImplementationTree<Stolen> {
     }
 
     /**
-     * Retorna el valor .
+     * Retorna el valor.
      *
      * @param id
      * @return Objeto Stolen
