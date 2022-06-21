@@ -94,13 +94,16 @@ public class MainWindow extends javax.swing.JFrame {
 
         menuIconImage.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo_menu.png"))); // NOI18N
 
+        separatorLine1.setBackground(new java.awt.Color(204, 204, 255));
+        separatorLine1.setForeground(new java.awt.Color(204, 204, 255));
+
         actualDate.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         actualDate.setForeground(new java.awt.Color(204, 204, 255));
         actualDate.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         actualDate.setText(" ");
 
         actualHour.setFont(new java.awt.Font("Century Gothic", 0, 34)); // NOI18N
-        actualHour.setForeground(new java.awt.Color(213, 213, 213));
+        actualHour.setForeground(new java.awt.Color(204, 204, 255));
         actualHour.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         actualHour.setText(" ");
 
