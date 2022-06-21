@@ -364,7 +364,7 @@ public class PanelReports extends javax.swing.JPanel {
             String neighborhood = tableData.getValueAt(selectedRow, 3).toString();
             String object = tableData.getValueAt(selectedRow, 4).toString();
             String modusOperandi = tableData.getValueAt(selectedRow, 5).toString();
-            if (ReportController.isOnTheList(id)) {
+            if (ReportController.exist(id)) {
                 ReportController.updateReport(id, data);
                 TopsController.deleteReportCount(neighborhood, object, modusOperandi);
                 TopsController.addReportCount(data[3], data[4], data[5]);
@@ -401,7 +401,7 @@ public class PanelReports extends javax.swing.JPanel {
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
         String id = JOptionPane.showInputDialog(null, "Inserte el ID del reporte: ", "Reportes", JOptionPane.QUESTION_MESSAGE);
         try {
-            if (ReportController.existReport(id) == false) {
+            if (ReportController.existReportById(id) == false) {
                 JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
                 return;
             }
@@ -425,7 +425,7 @@ public class PanelReports extends javax.swing.JPanel {
             int dialog = JOptionPane.showConfirmDialog(null, "¿Esta seguro que desea eliminar el registro " + id + "?", "Reportes", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, DANGERIMG);
 
             if (dialog == JOptionPane.YES_OPTION) {
-                if (ReportController.isOnTheList(id)) {
+                if (ReportController.exist(id)) {
                     String neighborhood = tableData.getValueAt(selectedRow, 3).toString();
                     String object = tableData.getValueAt(selectedRow, 4).toString();
                     String modusOperandi = tableData.getValueAt(selectedRow, 5).toString();
@@ -447,7 +447,7 @@ public class PanelReports extends javax.swing.JPanel {
         }
         try {
             String id = tableData.getValueAt(selectedRow, 0).toString();
-            if (ReportController.existReport(id) == false) {
+            if (ReportController.existReportById(id) == false) {
                 JOptionPane.showMessageDialog(null, "Reporte no encontrado, intentelo con otro ID.", "Reportes", JOptionPane.OK_OPTION, DANGERIMG);
                 return;
             }
