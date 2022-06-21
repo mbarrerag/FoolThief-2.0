@@ -11,6 +11,7 @@ public class MainWindow extends javax.swing.JFrame {
 
     private PanelHome pnlHome = new PanelHome();
     private PanelReports pnlReports = new PanelReports();
+    private PanelStolenVehicles pnlVehicles = new PanelStolenVehicles();
     private DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     /**
@@ -71,6 +72,8 @@ public class MainWindow extends javax.swing.JFrame {
         btnHome = new javax.swing.JButton();
         pnlBtnReports = new javax.swing.JPanel();
         btnReports = new javax.swing.JButton();
+        pnlBtnVehicles = new javax.swing.JPanel();
+        btnVehicles = new javax.swing.JButton();
         container = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -113,7 +116,7 @@ public class MainWindow extends javax.swing.JFrame {
         btnHome.setFocusPainted(false);
         btnHome.setHideActionText(true);
         btnHome.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnHome.setIconTextGap(25);
+        btnHome.setIconTextGap(20);
         btnHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnHomeActionPerformed(evt);
@@ -143,7 +146,7 @@ public class MainWindow extends javax.swing.JFrame {
         btnReports.setFocusPainted(false);
         btnReports.setHideActionText(true);
         btnReports.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        btnReports.setIconTextGap(25);
+        btnReports.setIconTextGap(20);
         btnReports.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReportsActionPerformed(evt);
@@ -154,11 +157,41 @@ public class MainWindow extends javax.swing.JFrame {
         pnlBtnReports.setLayout(pnlBtnReportsLayout);
         pnlBtnReportsLayout.setHorizontalGroup(
             pnlBtnReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnReports, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(btnReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         pnlBtnReportsLayout.setVerticalGroup(
             pnlBtnReportsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnReports, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        pnlBtnVehicles.setBackground(new java.awt.Color(51, 51, 51));
+
+        btnVehicles.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        btnVehicles.setForeground(new java.awt.Color(213, 213, 213));
+        btnVehicles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/btn_vahicles.png"))); // NOI18N
+        btnVehicles.setText("Rep. Vehiculo");
+        btnVehicles.setBorderPainted(false);
+        btnVehicles.setContentAreaFilled(false);
+        btnVehicles.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVehicles.setFocusPainted(false);
+        btnVehicles.setHideActionText(true);
+        btnVehicles.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        btnVehicles.setIconTextGap(20);
+        btnVehicles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVehiclesActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pnlBtnVehiclesLayout = new javax.swing.GroupLayout(pnlBtnVehicles);
+        pnlBtnVehicles.setLayout(pnlBtnVehiclesLayout);
+        pnlBtnVehiclesLayout.setHorizontalGroup(
+            pnlBtnVehiclesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnVehicles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        pnlBtnVehiclesLayout.setVerticalGroup(
+            pnlBtnVehiclesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnVehicles, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout menuContainerLayout = new javax.swing.GroupLayout(menuContainer);
@@ -168,6 +201,7 @@ public class MainWindow extends javax.swing.JFrame {
             .addGroup(menuContainerLayout.createSequentialGroup()
                 .addGroup(menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(pnlBtnHome, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnlBtnReports, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(menuContainerLayout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(menuContainerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -179,7 +213,7 @@ public class MainWindow extends javax.swing.JFrame {
                                     .addComponent(separatorLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(separatorLine1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(0, 0, Short.MAX_VALUE))))
-                    .addComponent(pnlBtnReports, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pnlBtnVehicles, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         menuContainerLayout.setVerticalGroup(
@@ -193,7 +227,9 @@ public class MainWindow extends javax.swing.JFrame {
                 .addComponent(pnlBtnHome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlBtnReports, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 205, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(pnlBtnVehicles, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 142, Short.MAX_VALUE)
                 .addComponent(separatorLine2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(actualHour)
@@ -238,17 +274,26 @@ public class MainWindow extends javax.swing.JFrame {
         container.repaint();
     }//GEN-LAST:event_btnReportsActionPerformed
 
+    private void btnVehiclesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVehiclesActionPerformed
+        container.removeAll();
+        container.add(pnlVehicles);
+        container.revalidate();
+        container.repaint();
+    }//GEN-LAST:event_btnVehiclesActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel actualDate;
     private javax.swing.JLabel actualHour;
     private javax.swing.JPanel bgPanel;
     javax.swing.JButton btnHome;
     javax.swing.JButton btnReports;
+    javax.swing.JButton btnVehicles;
     public static javax.swing.JPanel container;
     private javax.swing.JPanel menuContainer;
     private javax.swing.JLabel menuIconImage;
     javax.swing.JPanel pnlBtnHome;
     javax.swing.JPanel pnlBtnReports;
+    javax.swing.JPanel pnlBtnVehicles;
     private javax.swing.JSeparator separatorLine1;
     private javax.swing.JSeparator separatorLine2;
     // End of variables declaration//GEN-END:variables

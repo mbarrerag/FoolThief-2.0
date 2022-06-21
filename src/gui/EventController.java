@@ -25,6 +25,7 @@ public class EventController implements MouseListener {
     public final void events() {
         view.btnHome.addMouseListener(this);
         view.btnReports.addMouseListener(this);
+        view.btnVehicles.addMouseListener(this);
     }
 
     @Override
@@ -45,6 +46,8 @@ public class EventController implements MouseListener {
             changeBackground(view.pnlBtnHome, new Color(44, 62, 80));
         } else if (evt.equals(view.btnReports)) {
             changeBackground(view.pnlBtnReports, new Color(44, 62, 80));
+        } else if (evt.equals(view.btnVehicles)) {
+            changeBackground(view.pnlBtnVehicles, new Color(44, 62, 80));
         }
     }
 
@@ -62,6 +65,8 @@ public class EventController implements MouseListener {
             changeBackground(view.pnlBtnHome, new Color(44, 62, 80));
         } else if (evt.equals(view.btnReports)) {
             changeBackground(view.pnlBtnReports, new Color(44, 62, 80));
+        } else if (evt.equals(view.btnVehicles)) {
+            changeBackground(view.pnlBtnVehicles, new Color(44, 62, 80));
         }
     }
 
@@ -78,6 +83,8 @@ public class EventController implements MouseListener {
             changeBackground(view.pnlBtnHome, new Color(39, 66, 89));
         } else if (evt.equals(view.btnReports)) {
             changeBackground(view.pnlBtnReports, new Color(39, 66, 89));
+        } else if (evt.equals(view.btnVehicles)) {
+            changeBackground(view.pnlBtnVehicles, new Color(39, 66, 89));
         }
     }
 
@@ -94,6 +101,8 @@ public class EventController implements MouseListener {
             changeBackground(view.pnlBtnHome, new Color(51, 51, 51));
         } else if (evt.equals(view.btnReports)) {
             changeBackground(view.pnlBtnReports, new Color(51, 51, 51));
+        } else if (evt.equals(view.btnVehicles)) {
+            changeBackground(view.pnlBtnVehicles, new Color(51, 51, 51));
         }
     }
 

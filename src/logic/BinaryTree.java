@@ -63,7 +63,7 @@ public class BinaryTree implements ImplementationTree<Tops> {
                 return value;
             } else if (id < value.getNumRobberies() && left != null) {
                 return left.get(id);
-            } else if (id > value.getNumRobberies() && left != null) {
+            } else if (id > value.getNumRobberies() && right != null) {
                 return right.get(id);
             } else {
                 return null;

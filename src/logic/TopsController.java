@@ -7,9 +7,9 @@ package logic;
 public class TopsController {
 
     public static BinaryTree treeTop = new BinaryTree();
-    private static String[] neighborhoods = new String[]{"Usaquen", "Chapinero", "Santa Fe", "San Cristobal", "Usme", "Tunjuelito", "Bosa", "Kennedy", "Fontibon", "Engativa", "Suba", "Barrios Unidos", "Teusaquillo", "Los Martires", "Antonio Nariño", "Puente Aranda", "La Candelaria", "Rafael Uribe Uribe", "Ciudad Bolivar", "Sumapaz"};
-    private static String[] objects = new String[]{"Billetera", "Celular", "Bolso", "Bicicleta", "Vehiculo", "Computador", "Papeles"};
-    private static String[] modusOperandi = new String[]{"Raponazo", "Cosquilleo", "Asalto", "Paseo Millonario", "Estafa"};
+    private static final String[] neighborhoods = new String[]{"Usaquen", "Chapinero", "Santa Fe", "San Cristobal", "Usme", "Tunjuelito", "Bosa", "Kennedy", "Fontibon", "Engativa", "Suba", "Barrios Unidos", "Teusaquillo", "Los Martires", "Antonio Nariño", "Puente Aranda", "La Candelaria", "Rafael Uribe Uribe", "Ciudad Bolivar", "Sumapaz"};
+    private static final String[] objects = new String[]{"Billetera", "Celular", "Bolso", "Bicicleta", "Computador", "Papeles", "Vehiculo"};
+    private static final String[] modusOperandi = new String[]{"Raponazo", "Cosquilleo", "Asalto", "Paseo Millonario", "Estafa"};
     private static int[] countNeighborhoods = new int[neighborhoods.length];
     private static int[] countObjects = new int[objects.length];
     private static int[] countModusOperandi = new int[modusOperandi.length];
