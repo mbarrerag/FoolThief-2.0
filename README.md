@@ -11,11 +11,10 @@
 
 The Theft Incident Management System is an application designed to manage and analyze theft incidents reported by citizens. This is the second version of the project, incorporating different data structures for improved efficiency and functionality. The system allows users to report theft attempts, store incident details, and generate reports based on various criteria.
 
-New Features and Enhancements:
 
-Updated Data Structures:
+# Updated Data Structures:
 
-AVL Tree: Implemented an AVL tree data structure to efficiently store and manage theft incidents. The AVL tree ensures balanced operations, leading to faster insertion, deletion, and retrieval of incidents.
+# AVL Tree: Implemented an AVL tree data structure to efficiently store and manage theft incidents. The AVL tree ensures balanced operations, leading to faster insertion, deletion, and retrieval of incidents.
 Binary Tree: Utilized a binary tree data structure to organize and process theft incident data. The binary tree supports hierarchical organization and enables efficient searching and traversal operations.
 Dynamic Array: Incorporated a dynamic array data structure to handle the storage and manipulation of theft incidents. The dynamic array allows for resizing and flexible management of the incident data.
 
