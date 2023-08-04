@@ -1,4 +1,14 @@
+
+
 # FoolThief-2.0
+
+
+![Screenshot 2023-08-03 232223](https://github.com/mbarrerag/FoolThief-2.0/assets/101472701/4d2de7f9-089e-4f27-b82a-0f9a5dd0abe3)
+
+![Screenshot 2023-08-03 232143](https://github.com/mbarrerag/FoolThief-2.0/assets/101472701/8015a472-dbd4-4cf4-b5ab-14d1245479bf)
+
+
+
 The Theft Incident Management System is an application designed to manage and analyze theft incidents reported by citizens. This is the second version of the project, incorporating different data structures for improved efficiency and functionality. The system allows users to report theft attempts, store incident details, and generate reports based on various criteria.
 
 New Features and Enhancements:
